@@ -36,8 +36,8 @@ const left = new Audio();
    
     var canvas = this.inputRef.current;
     const ctx = canvas.getContext("2d");
-    canvas.width = Math.floor(window.outerWidth / 32) * 32 - 32;
-    canvas.height = Math.floor(window.outerHeight / 32) * 32;
+    canvas.width = Math.floor(window.innerWidth/ 32) * 32 - 32;
+    canvas.height = Math.floor(window.innerHeight / 32) * 32;
     const MAX_HEIGHT = canvas.height / 32;
     const MAX_WIDTH = canvas.width / 32;
     const box = 32;
