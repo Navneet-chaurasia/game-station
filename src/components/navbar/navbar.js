@@ -1,4 +1,4 @@
-import React,{Component } from "react";
+import React from "react";
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 

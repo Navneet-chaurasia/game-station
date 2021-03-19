@@ -1,5 +1,5 @@
 import NavBar from '../components/navbar/navbar';
-import React, {Component} from 'react'
+import React from 'react'
 
 import GameCard from '../components/game-cards/gameCards';
 import { Container, Row, Col } from 'react-bootstrap';
