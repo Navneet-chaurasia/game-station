@@ -3,26 +3,35 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
+import NavBar from './components/navbar/navbar';
 
 
 import SnakeGame from './games/snakeGame/snakeGame';
-import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
+import {  BrowserRouter , Route,  Switch, withRouter } from 'react-router-dom';
 
 
 ReactDOM.render(
+  <React.StrictMode>
+     
   <BrowserRouter>
+
   <Switch>
-          <Route path="/game">
-            <SnakeGame />
-          </Route>
+  <Route exact path="/" >
+  <NavBar title="Wonder Games"></NavBar>
+    <Home/>
+    </Route>
+          <Route path="/game" component = {SnakeGame} />
+          
+      
          
-          <Route exact path="/">
-            <Home />
-          </Route>
+         
+            
+       
         </Switch>
      
-    </BrowserRouter>,
+    </BrowserRouter>
+    </React.StrictMode>
+    ,
  
   document.getElementById('root')
 );

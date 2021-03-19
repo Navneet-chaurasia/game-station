@@ -1,4 +1,4 @@
-import NavBar from '../components/navbar/navbar';
+
 import React from 'react'
 
 import GameCard from '../components/game-cards/gameCards';
@@ -24,7 +24,7 @@ class Home extends React.Component{
 
         return (
             <>
-  <NavBar title="Wonder Games"></NavBar>
+ 
 
   <Container fluid>
   <Row className="justify-content-center">
