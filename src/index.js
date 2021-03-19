@@ -1,13 +1,29 @@
+import Home from './home/home';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+import SnakeGame from './games/snakeGame/snakeGame';
+import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Switch>
+          <Route path="/game">
+            <SnakeGame />
+          </Route>
+         
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+     
+    </BrowserRouter>,
+ 
   document.getElementById('root')
 );
 
