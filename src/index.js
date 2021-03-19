@@ -7,7 +7,7 @@ import NavBar from './components/navbar/navbar';
 
 
 import SnakeGame from './games/snakeGame/snakeGame';
-import {  BrowserRouter , Route,  Switch, withRouter } from 'react-router-dom';
+import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 
 
 ReactDOM.render(
