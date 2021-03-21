@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from "react-bootstrap";
-
+import AuthStateUI from '../authStateComponent/authState';
+import LogoutComponent from "../logoutComponent/logoutComponent";
 
 //home Navbar
 
@@ -21,10 +22,10 @@ class NavBar extends React.Component{
                   <NavDropdown.Item href="#action/3.2">Setting 2</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Setting 3</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Setting 4</NavDropdown.Item>
+                  <NavDropdown.Item ><LogoutComponent></LogoutComponent> </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link href="#home">Profile</Nav.Link>
+                <Nav.Link > <AuthStateUI></AuthStateUI></Nav.Link>
               </Nav>
               <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />

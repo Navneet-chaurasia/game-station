@@ -11,7 +11,7 @@ import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+
      
   <BrowserRouter>
 
@@ -26,7 +26,7 @@ ReactDOM.render(
         </Switch>
      
     </BrowserRouter>
-    </React.StrictMode>
+  
     ,
  
   document.getElementById('root')
