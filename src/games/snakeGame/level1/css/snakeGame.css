@@ -6,7 +6,22 @@
     border: 2px solid red;
 }
 
-
+@media only screen and (max-width: 600px) {
+    #snakeGameCanvas {
+     width: 100%;
+    
+    }
+  }
 body{
     touch-action: none;
+}
+
+
+#snakeGameRestartButton{
+    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    right:30px;
+  color:white;
+    top:10px;
 }

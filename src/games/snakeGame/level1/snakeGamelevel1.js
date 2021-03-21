@@ -1,6 +1,8 @@
 import React from 'react';
 import GameLogic from './services/logic';
 import './css/snakeGame.css';
+import { getDeviceType } from './services/getDeviceType';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -22,8 +24,18 @@ class SnakeGame extends React.Component{
 
 
       //create object of gameLogic class
-     this.logic = new GameLogic(this.inputRef.current);
+      //check device type
+      if(getDeviceType() === "desktop"){
+        this.logic = new GameLogic(this.inputRef.current,1);
 
+      }else if(getDeviceType() === "mobile"){
+        this.logic = new GameLogic(this.inputRef.current,2);
+
+      }else{
+        this.logic = new GameLogic(this.inputRef.current,1);
+
+      }
+     
      //start playing the game
      this.logic.play();
    
@@ -46,14 +58,17 @@ class SnakeGame extends React.Component{
     this.fun =  document.addEventListener('touchstart',e=> this.logic.handleTouchStart(e),false);
 
     this.fun =  document.addEventListener('touchmove',e=> this.logic.gestureHandler(e),false);
+
+    document.body.style.touchAction="auto"
   }
 
 
   //render method
   render(){
     return(
-
-       <center><canvas ref={this.inputRef} id="snakeGameCanvas"></canvas></center> 
+      <>
+      <Button   onClick={()=>this.logic.restart()} size="small" color="primary" id="snakeGameRestartButton"> restart </Button>
+       <center><canvas ref={this.inputRef} id="snakeGameCanvas"></canvas></center></> 
     );
   }
 

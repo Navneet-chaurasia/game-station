@@ -6,12 +6,15 @@ import LogoutComponent from "../logoutComponent/logoutComponent";
 //home Navbar
 
 class NavBar extends React.Component{
-      
-
+ 
     render(){
+
+
+     
+     
         return (
             <Navbar bg="light" expand="lg" sticky="top" >
-            <Navbar.Brand href="#home">{this.props.title}</Navbar.Brand>
+            <Navbar.Brand onClick={() => this.fun()}>{this.props.title}</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
