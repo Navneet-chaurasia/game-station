@@ -58,14 +58,14 @@ export default function GameCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      
+      <Link to="/game"> 
         <Button size="small" color="primary">
        
-          <Link to="/game">  Play</Link>
+         Play
          
         
         </Button>
-     
+        </Link>
         <Button size="small" color="primary">
            Bookmark
         </Button>
