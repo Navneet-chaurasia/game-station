@@ -33,7 +33,7 @@ class GameLogic{
    MAX_WIDTH;
 
 //total cells in box
-   box = 32;
+   box;
 
    //position of food
    food;
@@ -43,8 +43,13 @@ class GameLogic{
 
  xDown = null;                                                        
  yDown = null;
+ 
 
-   constructor(c){
+ //device type
+ //possible value (1 => for desktop, 2 => for mobile)
+ //game UI willl be different for both type of devices
+ deviceType;
+   constructor(c, deviceType){
      this.canvas = c;
       
        this.foodImg.src =  res.foodImage;
@@ -55,7 +60,13 @@ class GameLogic{
        this.right.src = res.rightSound;
        this.left.src = res.leftSound;
 
-      
+      this.deviceType = deviceType;
+
+      if(this.deviceType === 1){
+          this.box = 32;
+      }else{
+          this.box = 20;
+      }
 
        this.setupBoard();
       
@@ -64,12 +75,12 @@ class GameLogic{
    //some setups of board 
    setupBoard(){
     this.ctx = this.canvas.getContext("2d");
-    this.canvas.width = Math.floor(window.innerWidth/ 32) * 32 - 32;
-    this.canvas.height = Math.floor(window.innerHeight / 32) * 32;
+    this.canvas.width = Math.floor(window.innerWidth/ this.box) * this.box - this.box;
+    this.canvas.height = Math.floor(window.innerHeight / this.box) * this.box;
 
 
-    this.MAX_HEIGHT  = this.canvas.height / 32;
-    this.MAX_WIDTH  = this.canvas.width / 32;
+    this.MAX_HEIGHT  = this.canvas.height / this.box;
+    this.MAX_WIDTH  = this.canvas.width / this.box;
 
     this.snake[0] = {
         x: Math.floor(this.MAX_WIDTH / 2) * this.box,
@@ -116,11 +127,11 @@ class GameLogic{
 
     //draw board the method
     drawBoard() {
-        for (let i = 32; i < this.MAX_WIDTH * this.box; i += 32) {
+        for (let i = this.box; i < this.MAX_WIDTH * this.box; i += this.box) {
             this.ctx.moveTo(i, this.MAX_HEIGHT * this.box);
             this.ctx.lineTo(i, 0);
         }
-        for (let  i = 32; i <this.MAX_HEIGHT * this.box; i += 32) {
+        for (let  i = this.box; i <this.MAX_HEIGHT * this.box; i += this.box) {
             this.ctx.moveTo(0, i);
             this.ctx.lineTo(this.MAX_WIDTH * this.box, i);
         }
@@ -135,8 +146,8 @@ class GameLogic{
    //draw position of food and snake in board
    draww() {
    
-    this.canvas.width = Math.floor(window.innerWidth / 32) * 32 - 32;
-    this.canvas.height = Math.floor(window.innerHeight / 32) * 32;
+    this.canvas.width = Math.floor(window.innerWidth / this.box) * this.box - this.box;
+    this.canvas.height = Math.floor(window.innerHeight / this.box) * this.box;
     this.drawBoard();
 
     for (var i = 0; i < this.snake.length; i++) {
@@ -148,7 +159,7 @@ class GameLogic{
     }
 
     
-    this.ctx.drawImage(this.foodImg, this.food.x, this.food.y);
+    this.ctx.drawImage(this.foodImg, this.food.x, this.food.y,this.box,this.box);
 
     var snakeX = this.snake[0].x;
     var snakeY = this.snake[0].y;
