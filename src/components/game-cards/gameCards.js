@@ -58,7 +58,7 @@ export default function GameCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Link to="/game"> 
+      <Link to={props.href}> 
         <Button size="small" color="primary">
        
          Play
