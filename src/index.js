@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import NavBar from './components/navbar/navbar';
 
 
-import SnakeGame from './games/snakeGame/snakeGame';
+import SnakeGame from './games/snakeGame/level1/snakeGamelevel1';
 import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 
 
@@ -20,12 +20,8 @@ ReactDOM.render(
   <NavBar title="Wonder Games"></NavBar>
     <Home/>
     </Route>
-          <Route path="/game" component = {SnakeGame} />
-          
-      
-         
-         
-            
+          <Route path="/games/snakeGame/level1" component = {SnakeGame} />
+           
        
         </Switch>
      

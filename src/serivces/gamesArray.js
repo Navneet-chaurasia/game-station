@@ -11,7 +11,7 @@ export class GamesArray{
             'category': "timepass",
             'createdAt': Date.now,
             'coverImage': "https://wallpapercave.com/wp/wp3906249.jpg",
-            'href': "/games/snakeGame",
+            'href': "/games/snakeGame/level1",
             'id':"du92ue92j92j2e02j0r2"
         },
         {
@@ -20,7 +20,7 @@ export class GamesArray{
             'category': "timepass",
             'createdAt': Date.now,
             'coverImage': "https://wallpapercave.com/wp/wp3906249.jpg",
-            'href': "/games/snakeGame",
+            'href': "/games/snakeGame/level1",
             "id":"d9302ur920j902ed"
         },
         {
@@ -29,7 +29,7 @@ export class GamesArray{
             'category': "timepass",
             'createdAt': Date.now,
             'coverImage':"https://wallpapercave.com/wp/wp3906249.jpg",
-            'href': "/games/snakeGame",
+            'href': "/games/snakeGame/level1",
             "id":"wqd092ue23i0dke3"
         },
        
