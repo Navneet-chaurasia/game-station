@@ -22,6 +22,8 @@ class SnakeGame extends React.Component{
   
   componentDidMount() {
 
+    //disable default touch behaviour 
+    document.body.style.touchAction="none"
 
       //create object of gameLogic class
       //check device type
@@ -59,7 +61,7 @@ class SnakeGame extends React.Component{
 
     this.fun =  document.addEventListener('touchmove',e=> this.logic.gestureHandler(e),false);
 
-    document.body.style.touchAction="auto"
+    document.body.style.touchAction="initial"
   }
 
 
