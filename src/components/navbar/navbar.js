@@ -28,7 +28,7 @@ class NavBar extends React.Component{
                   <NavDropdown.Item ><LogoutComponent></LogoutComponent> </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link > <AuthStateUI></AuthStateUI></Nav.Link>
+                <AuthStateUI></AuthStateUI>
               </Nav>
               <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
