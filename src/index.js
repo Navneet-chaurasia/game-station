@@ -8,6 +8,7 @@ import NavBar from './components/navbar/navbar';
 
 import SnakeGame from './games/snakeGame/level1/snakeGamelevel1';
 import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
+import ProfilePage from './profile/profile';
 
 
 ReactDOM.render(
@@ -21,8 +22,15 @@ ReactDOM.render(
     <Home/>
     </Route>
           <Route path="/games/snakeGame/level1" component = {SnakeGame} />
-           
+           <Route  path ="/profile" >
+           <NavBar title="Wonder Games"></NavBar>
+         <ProfilePage></ProfilePage>
+
+           </Route>
        
+       <Route path="*">
+         <Home></Home>
+       </Route>
         </Switch>
      
     </BrowserRouter>
