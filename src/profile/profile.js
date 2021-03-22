@@ -22,8 +22,8 @@ class ProfilePage extends React.Component{
           <div className="page-heading">
               <div className="media clearfix">
                 <div className="media-left pr30">
-                  <a href="#">
-                    <img className="media-object mw150" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="..." />
+                  <a href="facebook.com">
+                    <img alt="this is for fucking" className="media-object mw150" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="..." />
                   </a>
                 </div>                      
                 <div className="media-body va-m">
@@ -34,52 +34,52 @@ class ProfilePage extends React.Component{
                   <div className="media-links">
                     <ul className="list-inline list-unstyled">
                       <li>
-                        <a href="#" title="facebook link">
+                        <a href="facebook.com" title="facebook link">
                           <span className="fa fa-facebook-square fs35 text-primary"></span>
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="twitter link">
+                        <a href="facebook.com" title="twitter link">
                           <span className="fa fa-twitter-square fs35 text-info"></span>
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="google plus link">
+                        <a href="facebook.com" title="google plus link">
                           <span className="fa fa-google-plus-square fs35 text-danger"></span>
                         </a>
                       </li>
                       <li className="hidden">
-                        <a href="#" title="behance link">
+                        <a href="facebook.com" title="behance link">
                           <span className="fa fa-behance-square fs35 text-primary"></span>
                         </a>
                       </li>
                       <li className="hidden">
-                        <a href="#" title="pinterest link">
+                        <a href="facebook.com" title="pinterest link">
                           <span className="fa fa-pinterest-square fs35 text-danger-light"></span>
                         </a>
                       </li>
                       <li className="hidden">
-                        <a href="#" title="linkedin link">
+                        <a href="facebook.com" title="linkedin link">
                           <span className="fa fa-linkedin-square fs35 text-info"></span>
                         </a>
                       </li>
                       <li className="hidden">
-                        <a href="#" title="github link">
+                        <a href="facebook.com" title="github link">
                           <span className="fa fa-github-square fs35 text-dark"></span>
                         </a>
                       </li>
                       <li className="">
-                        <a href="#" title="phone link">
+                        <a href="facebook.com" title="phone link">
                           <span className="fa fa-phone-square fs35 text-system"></span>
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="email link">
+                        <a href="facebook.com" title="email link">
                           <span className="fa fa-envelope-square fs35 text-muted"></span>
                         </a>
                       </li>
                       <li className="hidden">
-                        <a href="#" title="external link">
+                        <a href="facebook.com" title="external link">
                           <span className="fa fa-external-link-square fs35 text-muted"></span>
                         </a>
                       </li>
@@ -210,14 +210,14 @@ class ProfilePage extends React.Component{
                   <div className="tab-content p30" >
                     <div id="tab1" className="tab-pane active">
                       <div className="media">
-                        <a className="pull-left" href="#"> <img className="media-object mn thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." /> </a>
+                        <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." /> </a>
                         <div className="media-body">
                           <h5 className="media-heading mb20">Simon Rivers Posted
                             <small> - 3 hours ago</small>
                           </h5>
-                          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="mw140 mr25 mb20" />
-                          <img src="https://bootdey.com/img/Content/avatar/avatar8.png" className="mw140 mr25 mb20" /> 
-                          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" className="mw140 mb20" />
+                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar6.png" className="mw140 mr25 mb20" />
+                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar8.png" className="mw140 mr25 mb20" /> 
+                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar7.png" className="mw140 mb20" />
                           <div className="media-links">
                             <span className="text-light fs12 mr10">
                               <span className="fa fa-thumbs-o-up text-primary mr5"></span> Like </span>
@@ -231,14 +231,14 @@ class ProfilePage extends React.Component{
                         </div>
                       </div>
                       <div className="media mt25">
-                        <a className="pull-left" href="#"> <img className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..." /> </a>
+                        <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..." /> </a>
                         <div className="media-body mb5">
                           <h5 className="media-heading mbn">Simon Rivers Posted
                             <small> - 3 hours ago</small>
                           </h5>
                           <p> Omg so freaking sweet dude.</p>
                           <div className="media pb10">
-                            <a className="pull-left" href="#"> <img className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." /> </a>
+                            <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." /> </a>
                             <div className="media-body mb5">
                               <h5 className="media-heading mbn">Jessica Wong
                                 <small> - 3 hours ago</small>
@@ -247,7 +247,7 @@ class ProfilePage extends React.Component{
                             </div>
                           </div>
                           <div className="media mtn">
-                            <a className="pull-left" href="#"> <img className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
+                            <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
                             <div className="media-body mb5">
                               <h5 className="media-heading mbn">Jessica Wong
                                 <small> - 3 hours ago</small>
@@ -258,14 +258,14 @@ class ProfilePage extends React.Component{
                         </div>
                       </div>
                       <div className="media mt25">
-                        <a className="pull-left" href="#"> <img className="media-object thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
+                        <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
                         <div className="media-body">
                           <h5 className="media-heading mb20">Simon Rivers Posted
                             <small> - 3 hours ago</small>
                           </h5>
-                          <img src="https://bootdey.com/img/Content/avatar/avatar2.png" className="mw140 mr25 mb20" />
-                          <img src="https://bootdey.com/img/Content/avatar/avatar3.png" className="mw140 mr25 mb20" /> 
-                          <img src="https://bootdey.com/img/Content/avatar/avatar4.png" className="mw140 mb20" />
+                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar2.png" className="mw140 mr25 mb20" />
+                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar3.png" className="mw140 mr25 mb20" /> 
+                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar4.png" className="mw140 mb20" />
                           <div className="media-links">
                             <span className="text-light fs12 mr10">
                               <span className="fa fa-thumbs-o-up text-primary mr5"></span> Like </span>

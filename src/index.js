@@ -9,7 +9,7 @@ import NavBar from './components/navbar/navbar';
 import SnakeGame from './games/snakeGame/level1/snakeGamelevel1';
 import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 import ProfilePage from './profile/profile';
-
+import * as serviceWorker from './serviceWorkerRegistration';
 
 ReactDOM.render(
 
@@ -17,16 +17,17 @@ ReactDOM.render(
   <BrowserRouter>
 
   <Switch>
+  <Route  exact path ="/profile" >
+           <NavBar title="Wonder Games"></NavBar>
+         <ProfilePage></ProfilePage>
+
+           </Route>
   <Route exact path="/" >
   <NavBar title="Wonder Games"></NavBar>
     <Home/>
     </Route>
           <Route path="/games/snakeGame/level1" component = {SnakeGame} />
-           <Route  path ="/profile" >
-           <NavBar title="Wonder Games"></NavBar>
-         <ProfilePage></ProfilePage>
-
-           </Route>
+           
        
        <Route path="*">
          <Home></Home>
@@ -44,3 +45,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+serviceWorker.register();
