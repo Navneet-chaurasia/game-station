@@ -5,7 +5,7 @@
 //get userid
 //get userData
 import firebase from "firebase/app";
-
+import DB from './backend/database';
 import { firebaseConfig } from "./firebaseConfigs";
 import "firebase/auth";
 firebase.initializeApp(firebaseConfig);
@@ -36,7 +36,12 @@ class AuthService{
     // Sign into Firebase using popup auth & Google as the identity provider.
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(()=> {
-      firebase.auth().signInWithPopup(provider).catch(c => {
+      firebase.auth().signInWithPopup(provider).then((user) => {
+console.log("adding user data in then function")
+        //after signing in add data into db
+        DB.addUser(user.user);
+      })
+      .catch(c => {
           console.log("error in signing in")
       })
     }) 

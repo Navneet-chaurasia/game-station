@@ -4,7 +4,7 @@ import AuthService from '../../serivces/auth';
 import firebase from "firebase/app";
  import './authState.css'
  import Avatar from '@material-ui/core/Avatar';
-
+ import { Link } from 'react-router-dom';
 class AuthStateUI extends React.Component{
 
    isMounted;
@@ -50,7 +50,7 @@ class AuthStateUI extends React.Component{
 
     render(){
        if(this.state.isLoggedIn){
-return (<p>  <Avatar id="profilePic" alt="Remy Sharp" src={this.state.userData.photoURL}/> {this.state.userData.displayName}</p>)
+return (<Link to="/profile"> <Avatar id="profilePic" alt="Remy Sharp" src={this.state.userData.photoURL}/> {this.state.userData.displayName}</Link> )
       } else{
 return( <p onClick={AuthService.signIn}>Login</p>)
       }
