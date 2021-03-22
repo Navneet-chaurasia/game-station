@@ -23,7 +23,7 @@ class ProfilePage extends React.Component{
               <div className="media clearfix">
                 <div className="media-left pr30">
                   <a href="facebook.com">
-                    <img alt="this is for fucking" className="media-object mw150" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="..." />
+                    <img alt="frjowefer pofre" className="media-object mw150" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="..." />
                   </a>
                 </div>                      
                 <div className="media-body va-m">
@@ -210,14 +210,14 @@ class ProfilePage extends React.Component{
                   <div className="tab-content p30" >
                     <div id="tab1" className="tab-pane active">
                       <div className="media">
-                        <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." /> </a>
+                        <a className="pull-left" href="facebook.com"> <img alt="ee9 fw0 f" className="media-object mn thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." /> </a>
                         <div className="media-body">
                           <h5 className="media-heading mb20">Simon Rivers Posted
                             <small> - 3 hours ago</small>
                           </h5>
-                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar6.png" className="mw140 mr25 mb20" />
-                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar8.png" className="mw140 mr25 mb20" /> 
-                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar7.png" className="mw140 mb20" />
+                          <img alt="fowje ofj ow" src="https://bootdey.com/img/Content/avatar/avatar6.png" className="mw140 mr25 mb20" />
+                          <img alt="wqdqjoq ofj" src="https://bootdey.com/img/Content/avatar/avatar8.png" className="mw140 mr25 mb20" /> 
+                          <img alt="dfude0d fdw" src="https://bootdey.com/img/Content/avatar/avatar7.png" className="mw140 mb20" />
                           <div className="media-links">
                             <span className="text-light fs12 mr10">
                               <span className="fa fa-thumbs-o-up text-primary mr5"></span> Like </span>
@@ -247,7 +247,7 @@ class ProfilePage extends React.Component{
                             </div>
                           </div>
                           <div className="media mtn">
-                            <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
+                            <a className="pull-left" href="facebook.com"> <img alt="wdj9wejdoe jfew" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
                             <div className="media-body mb5">
                               <h5 className="media-heading mbn">Jessica Wong
                                 <small> - 3 hours ago</small>
@@ -258,14 +258,14 @@ class ProfilePage extends React.Component{
                         </div>
                       </div>
                       <div className="media mt25">
-                        <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
+                        <a className="pull-left" href="facebook.com"> <img alt="ej9djw ofwejf" className="media-object thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." /> </a>
                         <div className="media-body">
                           <h5 className="media-heading mb20">Simon Rivers Posted
                             <small> - 3 hours ago</small>
                           </h5>
-                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar2.png" className="mw140 mr25 mb20" />
-                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar3.png" className="mw140 mr25 mb20" /> 
-                          <img alt="this is for fucking" src="https://bootdey.com/img/Content/avatar/avatar4.png" className="mw140 mb20" />
+                          <img alt="jedjowe " src="https://bootdey.com/img/Content/avatar/avatar2.png" className="mw140 mr25 mb20" />
+                          <img alt="0ejjf0we fwe f" src="https://bootdey.com/img/Content/avatar/avatar3.png" className="mw140 mr25 mb20" /> 
+                          <img alt="jewjewopf ofpo" src="https://bootdey.com/img/Content/avatar/avatar4.png" className="mw140 mb20" />
                           <div className="media-links">
                             <span className="text-light fs12 mr10">
                               <span className="fa fa-thumbs-o-up text-primary mr5"></span> Like </span>
