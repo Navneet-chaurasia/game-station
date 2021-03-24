@@ -1,4 +1,5 @@
-import { handleTouchStart } from 'serivces/touchEvents';
+import { handleTouchStart,globalGestureHandler } from 'serivces/touchEvents';
+
 import  * as res from './resources';
 
 
@@ -42,8 +43,7 @@ class GameLogic{
    //redraw game each second
    game;
 
- xDown = null;                                                        
- yDown = null;
+
  
 
  //device type
@@ -60,7 +60,7 @@ class GameLogic{
        this.down.src = res.downSound;
        this.right.src = res.rightSound;
        this.left.src = res.leftSound;
-
+       this.touchCordinates = null;
       this.deviceType = deviceType;
 
       if(this.deviceType === 1){
@@ -239,62 +239,62 @@ if(key === "KeyR"){
 
 
 
+//first register this function with "touchStart" event 
+//that way we will have starting point of touch
+//then register "touchMove" event it will give last position of touch movement
+//that way start and end position calculation will give us direction of gesture
+
  handleTouch(evt) {
-     const touchCordinates  =  handleTouchStart(evt);                                  
-    this.xDown = touchCordinates.clientX;                                     
-    this.yDown = touchCordinates.clientY;   
+     this.touchCordinates  =  handleTouchStart(evt);                                  
                            
 }; 
-//this will listen to gesture event (if game is being played in mobiles)
+/** 
+this will listen to gesture event (if game is being played in mobiles)
+*/
 gestureHandler(evt) {
+    
+  var gestureCode = globalGestureHandler(evt, this.touchCordinates);
 
-     
-    if ( ! this.xDown || ! this.yDown ) {
-        return;
-    }
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = this.xDown - xUp;
-    var yDiff = this.yDown - yUp;
-
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            /* left swipe */ 
-            console.log("left swipe")
-            if(this.dir !== "right"){
-                this.dir = "left";
-                this.left.play();
-            }
-        } else {
-            /* right swipe */
+    
+   switch(gestureCode){
+       case 1:
+        if(this.dir !== "right"){
+            this.dir = "left";
+         
+            this.left.play();
+          
+           
+        }
+           break;
+        case 2:
             if(this.dir !== "left"){
                 this.dir = "right";
+                
                 this.right.play();
+              
             }
-            console.log("right swipe")
-        }                       
-    } else {
-        if ( yDiff > 0 ) {
-            /* up swipe */ 
-            if(this.dir !== "down"){
-                this.dir = "up";
-                this.up.play();
-            }
-            
-        } else { 
-            /* down swipe */
+            break;
+        case 3:
             if(this.dir !== "up"){
                 this.dir = "down";
-                 this.down.play();
+               
+                this.up.play();
+              
             }
-            console.log("down swipe")
-        }                                                                 
-    }
-    /* reset values */
-    this.xDown = null;
-    this.yDown = null;                                             
+            break;
+        case 4 :
+            if(this.dir !== "down"){
+                this.dir = "up";
+               
+                  this.down.play();
+                
+            }
+            break;
+        default:
+            break;
+   }
+  
+                                           
 };
 }
 

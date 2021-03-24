@@ -70,7 +70,7 @@ class SnakeGame extends React.Component{
     return(
       <>
       <Button   onClick={()=>this.logic.restart()} size="small" color="primary" id="snakeGameRestartButton"> restart </Button>
-       <center><canvas ref={this.inputRef} id="snakeGameCanvas"></canvas></center></> 
+       <center><canvas ref={this.inputRef} id="snakeGameCanvas" muted="muted"></canvas></center></> 
     );
   }
 
