@@ -1,3 +1,4 @@
+import { handleTouchStart } from 'serivces/touchEvents';
 import  * as res from './resources';
 
 
@@ -237,17 +238,17 @@ if(key === "KeyR"){
 }
 
 
-getTouches(evt) {
-    return evt.touches ||             // browser API
-           evt.originalEvent.touches; // jQuery
-  } 
- handleTouchStart(evt) {
-    const firstTouch = this.getTouches(evt)[0];                                      
-    this.xDown = firstTouch.clientX;                                      
-    this.yDown = firstTouch.clientY;                                      
+
+ handleTouch(evt) {
+     const touchCordinates  =  handleTouchStart(evt);                                  
+    this.xDown = touchCordinates.clientX;                                     
+    this.yDown = touchCordinates.clientY;   
+                           
 }; 
 //this will listen to gesture event (if game is being played in mobiles)
 gestureHandler(evt) {
+
+     
     if ( ! this.xDown || ! this.yDown ) {
         return;
     }

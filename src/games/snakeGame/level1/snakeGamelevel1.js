@@ -44,7 +44,7 @@ class SnakeGame extends React.Component{
     //draw everything on the canvas
     this.fun =  document.addEventListener("keydown",e=> this.logic.direction(e));
 
-    this.fun =  document.addEventListener('touchstart',e=> this.logic.handleTouchStart(e),false);
+    this.fun =  document.addEventListener('touchstart',e=> this.logic.handleTouch(e),false);
 
     this.fun =  document.addEventListener('touchmove',e=> this.logic.gestureHandler(e),false);
 
@@ -57,7 +57,7 @@ class SnakeGame extends React.Component{
   componentWillUnmount(){
     document.removeEventListener('keydown',e=>this.logic.direction(e))
 
-    this.fun =  document.addEventListener('touchstart',e=> this.logic.handleTouchStart(e),false);
+    this.fun =  document.addEventListener('touchstart',e=> this.logic.handleTouch(e),false);
 
     this.fun =  document.addEventListener('touchmove',e=> this.logic.gestureHandler(e),false);
 
