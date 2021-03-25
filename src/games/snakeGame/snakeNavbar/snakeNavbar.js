@@ -10,10 +10,7 @@ import './snakeNavbar.css'
 
 class SnakeNavbar extends React.Component{
 
-    constructor(props){
-        super(props);
-    }
-     
+   
     render(){
     return    <Navbar bg="transparent" fixed="top" >
         <Nav className="mr-auto">
