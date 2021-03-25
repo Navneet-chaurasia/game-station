@@ -94,7 +94,7 @@ class SnakeGame extends React.Component{
       <>
       <SnakeNavbar score={ <Button    size="small" color="primary" id="snakeGameRestartButton">{"SCORE "+ this.state.score} </Button>} 
       restartButton={  <Button   onClick={()=>this.logic.restart()} size="small" color="primary" id="snakeGameRestartButton"> Restart </Button>}
-      pauseButton ={  <Button   onClick={()=> this.state.gameState == "playing" ?  this.logic.pauseGame() : this.logic.resumeGame()} size="small" color="primary" id="snakeGameRestartButton">{this.state.gameState == "playing" ? "Pause" : "Resume"}</Button>}
+      pauseButton ={  <Button   onClick={()=> this.state.gameState === "playing" ?  this.logic.pauseGame() : this.logic.resumeGame()} size="small" color="primary" id="snakeGameRestartButton">{this.state.gameState === "playing" ? "Pause" : "Resume"}</Button>}
       ></SnakeNavbar>
     
        <center><canvas ref={this.inputRef} id="snakeGameCanvas" muted="muted"></canvas></center></> 

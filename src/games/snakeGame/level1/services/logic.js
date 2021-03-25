@@ -1,5 +1,5 @@
 import { handleTouchStart,globalGestureHandler } from 'serivces/touchEvents';
-import SnakeGame from '../snakeGamelevel1';
+
 
 import  * as res from './resources';
 
