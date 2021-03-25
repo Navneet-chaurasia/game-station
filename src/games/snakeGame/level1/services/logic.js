@@ -1,5 +1,6 @@
 import { handleTouchStart,globalGestureHandler } from 'serivces/touchEvents';
 
+
 import  * as res from './resources';
 
 
@@ -16,8 +17,7 @@ class GameLogic{
    right = new Audio();
    left = new Audio();
 
-   //score 
-   score  = 0;
+   
    //direction of snake 
      dir;
 
@@ -50,7 +50,7 @@ class GameLogic{
  //possible value (1 => for desktop, 2 => for mobile)
  //game UI willl be different for both type of devices
  deviceType;
-   constructor(c, deviceType){
+   constructor(c, deviceType, gameRef){
      this.canvas = c;
       
        this.foodImg.src =  res.foodImage;
@@ -62,6 +62,10 @@ class GameLogic{
        this.left.src = res.leftSound;
        this.touchCordinates = null;
       this.deviceType = deviceType;
+      this.score = 0;
+      //this hold ref to snakeGame class
+      //so that updateScore call can be made
+      this.gameRef  = gameRef;
 
       if(this.deviceType === 1){
           this.box = 32;
@@ -179,6 +183,8 @@ class GameLogic{
         }else{
             this.score++;
         }
+
+        this.gameRef.updateScore(this.score)
         this.eat.play();
         this.food = {
             x: Math.floor(Math.random() * (this.MAX_WIDTH)) * this.box,
@@ -202,9 +208,7 @@ class GameLogic{
     };
     this.snake.unshift(newHead);
 
-    this.ctx.fillStyle = "white";
-    this.ctx.font = "20px Changa one";
-    this.ctx.fillText("SCORE: " + this.score, 2 * this.box, 1.6 * this.box);
+   
 
 
   
@@ -237,6 +241,20 @@ if(key === "KeyR"){
     }
 }
 
+/**
+ * 
+ * method to pause the game
+ */
+pauseGame(){
+    clearInterval(this.game);
+    this.gameRef.updateGameState("paused");
+}
+
+resumeGame(){
+    this.gameRef.updateGameState("playing");
+    this.play();
+   
+}
 
 
 //first register this function with "touchStart" event 

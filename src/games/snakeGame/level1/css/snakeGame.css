@@ -13,10 +13,10 @@
 
 
 #snakeGameRestartButton{
-    position: fixed;
-    font-size: 20px;
+ 
+    font-size: 13px;
     font-weight: bold;
-    right:30px;
+ 
   color:white;
-    top:10px;
+    
 }
