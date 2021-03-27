@@ -220,6 +220,7 @@ constructor(props){
         <div className="w3-container">
           <h5>Countries</h5>
           <table className="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+              <tbody>
             <tr>
               <td>United States</td>
               <td>65%</td>
@@ -244,6 +245,7 @@ constructor(props){
               <td>France</td>
               <td>1.5%</td>
             </tr>
+            </tbody>
           </table><br/>
           <button className="w3-button w3-dark-grey">More Countries  <i className="fa fa-arrow-right"></i></button>
         </div>
