@@ -16,10 +16,10 @@ class SnakeNavbar extends React.Component{
     render(){
     return    <Navbar bg="transparent" fixed="top" >
         <Nav className="mr-auto">
-      <Nav.Link ><p>{this.props.score}</p></Nav.Link>
-      <Nav.Link  ><p>{this.props.restartButton}</p></Nav.Link>
-      <Nav.Link  ><p>{this.props.pauseButton}</p></Nav.Link>
-      <Nav.Link  ><p><Link to = '/games/snakeGame/settings'> <Button   size="small" color="primary" id="snakeGameRestartButton">Settings</Button></Link></p></Nav.Link>
+      <p>{this.props.score}</p>
+      <p>{this.props.restartButton}</p>
+      <p>{this.props.pauseButton}</p>
+     <p><Link to = '/games/snakeGame/settings'> <Button   size="small" color="primary" id="snakeGameRestartButton">Settings</Button></Link></p>
      
     </Nav>
       </Navbar>
