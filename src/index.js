@@ -10,6 +10,7 @@ import SnakeGame from './games/snakeGame/level1/snakeGamelevel1';
 import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 import ProfilePage from './profile/profile';
 import * as serviceWorker from './serviceWorkerRegistration';
+import SnakeGameSettings from 'games/snakeGame/snakeGameSettings/settings';
 
 ReactDOM.render(
 
@@ -28,7 +29,7 @@ ReactDOM.render(
     </Route>
           <Route path="/games/snakeGame/level1" component = {SnakeGame} />
            
-       
+          <Route path="/games/snakeGame/settings" component = {SnakeGameSettings} />
        <Route path="*">
          <Home></Home>
        </Route>

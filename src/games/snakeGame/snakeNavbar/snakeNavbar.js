@@ -1,5 +1,7 @@
+import { Button } from '@material-ui/core';
 import React from 'react'
 import { Navbar,Nav,} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './snakeNavbar.css'
 /**
@@ -17,6 +19,7 @@ class SnakeNavbar extends React.Component{
       <Nav.Link ><p>{this.props.score}</p></Nav.Link>
       <Nav.Link  ><p>{this.props.restartButton}</p></Nav.Link>
       <Nav.Link  ><p>{this.props.pauseButton}</p></Nav.Link>
+      <Nav.Link  ><p><Link to = '/games/snakeGame/settings'> <Button   size="small" color="primary" id="snakeGameRestartButton">Settings</Button></Link></p></Nav.Link>
      
     </Nav>
       </Navbar>
