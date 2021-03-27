@@ -67,6 +67,9 @@ class GameLogic{
       //so that updateScore call can be made
       this.gameRef  = gameRef;
 
+      //is game paused
+      this.gamePlaying = true;
+
       if(this.deviceType === 1){
           this.box = 32;
       }else{
@@ -123,6 +126,7 @@ class GameLogic{
 
    //this will be called if user quit the game or loss the game
    gameOver(){
+       this.gamePlaying = false;
     clearInterval(this.game);
     this.ctx.fillStyle = "red";
     this.ctx.font = "50px Changa one";
@@ -217,13 +221,26 @@ class GameLogic{
 
  direction(x) {
     var key = x.code;
-    
+   // console.log(x.code);
 
 if(key === "KeyR"){
     
     this.restart();
 }
 
+if(key === "Space"){
+    if(this.gamePlaying === true){
+      
+        this.pauseGame();
+    }else{
+       
+        this.resumeGame();
+    }
+    
+}
+
+
+if(this.gamePlaying){
     if (key === "Escape") {
         this.gameOver();
     } else if (key === "ArrowUp" && this.dir !== "down") {
@@ -240,17 +257,21 @@ if(key === "KeyR"){
         this.right.play();
     }
 }
+   
+}
 
 /**
  * 
  * method to pause the game
  */
 pauseGame(){
+    this.gamePlaying = false;
     clearInterval(this.game);
     this.gameRef.updateGameState("paused");
 }
 
 resumeGame(){
+    this.gamePlaying = true;
     this.gameRef.updateGameState("playing");
     this.play();
    
@@ -273,44 +294,46 @@ gestureHandler(evt) {
     
   var gestureCode = globalGestureHandler(evt, this.touchCordinates);
 
-    
-   switch(gestureCode){
-       case 1:
-        if(this.dir !== "right"){
-            this.dir = "left";
-         
-            this.left.play();
-          
-           
+      if(this.gamePlaying){
+        switch(gestureCode){
+            case 1:
+             if(this.dir !== "right"){
+                 this.dir = "left";
+              
+                 this.left.play();
+               
+                
+             }
+                break;
+             case 2:
+                 if(this.dir !== "left"){
+                     this.dir = "right";
+                     
+                     this.right.play();
+                   
+                 }
+                 break;
+             case 3:
+                 if(this.dir !== "up"){
+                     this.dir = "down";
+                    
+                     this.up.play();
+                   
+                 }
+                 break;
+             case 4 :
+                 if(this.dir !== "down"){
+                     this.dir = "up";
+                    
+                       this.down.play();
+                     
+                 }
+                 break;
+             default:
+                 break;
         }
-           break;
-        case 2:
-            if(this.dir !== "left"){
-                this.dir = "right";
-                
-                this.right.play();
-              
-            }
-            break;
-        case 3:
-            if(this.dir !== "up"){
-                this.dir = "down";
-               
-                this.up.play();
-              
-            }
-            break;
-        case 4 :
-            if(this.dir !== "down"){
-                this.dir = "up";
-               
-                  this.down.play();
-                
-            }
-            break;
-        default:
-            break;
-   }
+      }
+  
   
                                            
 };
