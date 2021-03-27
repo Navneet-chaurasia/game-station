@@ -5,14 +5,17 @@
     
     border: 2px solid red;
 }
+#snakeGameRestartButton{
+ 
+  font-size: 17px;
+  font-weight: bold;
+
+color:white;
+  
+}
 
 @media only screen and (max-width: 600px) {
-    
-  }
-
-
-
-#snakeGameRestartButton{
+  #snakeGameRestartButton{
  
     font-size: 13px;
     font-weight: bold;
@@ -20,3 +23,7 @@
   color:white;
     
 }
+  }
+ 
+
+
