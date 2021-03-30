@@ -177,10 +177,12 @@ class GameLogic {
       
        //check if snake is collided with board or not
     if (this.snake.isCollidedWithBoard()) {
+ 
         this.gameOver();
     }
     //check if snake collided with itself or not
         if (this.snake.isCollidedWithItself()) {
+         
             this.gameOver();
         }
         this.snake.addSnakeCell(); 
@@ -192,7 +194,8 @@ class GameLogic {
         this.ctx.font = "20px Changa one";
         this.ctx.fillText("SCORE: " + this.score, 2 * this.box, 1.6 * this.box);
 
-
+ //update the position of mouth
+ this.snake.updateMouhtPositon(this.dir);
 
     }
 
@@ -224,8 +227,7 @@ class GameLogic {
         }
 
 
-        //update the position of mouth
-        this.snake.updateMouhtPositon(this.dir);
+       
     }
 
 
