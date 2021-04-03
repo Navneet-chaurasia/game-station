@@ -66,7 +66,7 @@ class SnakeLevel1 {
         for (let i = 0; i < this.snakeCellArray.length; i++) {
 
             //draw each cell
-            if(i == 0 ){
+            if(i === 0 ){
                 this.snakeCellArray[i].draw("red");
             }else{
                 this.snakeCellArray[i].draw("blue");
