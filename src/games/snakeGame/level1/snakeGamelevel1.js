@@ -61,8 +61,7 @@ class SnakeGame extends React.Component{
 
      
      
-     //start playing the game
-     this.logic.play();
+     
    
     //draw everything on the canvas
     this.fun =  document.addEventListener("keydown",e=> this.logic.direction(e));
@@ -71,7 +70,8 @@ class SnakeGame extends React.Component{
 
     this.fun =  document.addEventListener('touchmove',e=> this.logic.gestureHandler(e),false);
 
-     
+     //start playing the game
+     this.logic.play();
 
      }
 

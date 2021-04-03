@@ -1,6 +1,6 @@
 import { BoardLevel1 } from 'games/snakeGame/Objects/board-level1';
 import { FoodLevel1 } from 'games/snakeGame/Objects/food';
-import {  SnakeLevel1 } from 'games/snakeGame/Objects/snakeObject';
+import { SnakeLevel1 } from 'games/snakeGame/Objects/snakeObject';
 import { handleTouchStart, globalGestureHandler } from 'serivces/touchEvents';
 
 import * as res from './resources';
@@ -43,46 +43,46 @@ class GameLogic {
     //redraw game each second
     game;
 
- //device type
- //possible value (1 => for desktop, 2 => for mobile)
- //game UI willl be different for both type of devices
- deviceType;
-   constructor(c, deviceType, gameRef){
-     this.canvas = c;
-      
-       this.foodImg.src =  res.foodImage;
-       this.dead.src = res.deadSound;
-       this.eat.src = res.eatSound;
-       this.up.src = res.upSound;
-       this.down.src = res.downSound;
-       this.right.src = res.rightSound;
-       this.left.src = res.leftSound;
-       
-       this.touchCordinates = null;
-      this.deviceType = deviceType;
-      this.score = 0;
-      //this hold ref to snakeGame class
-      //so that updateScore call can be made
-      this.gameRef  = gameRef;
+    //device type
+    //possible value (1 => for desktop, 2 => for mobile)
+    //game UI willl be different for both type of devices
+    deviceType;
+    constructor(c, deviceType, gameRef) {
+        this.canvas = c;
 
-      //is game paused
-      this.gamePlaying = true;
+        this.foodImg.src = res.foodImage;
+        this.dead.src = res.deadSound;
+        this.eat.src = res.eatSound;
+        this.up.src = res.upSound;
+        this.down.src = res.downSound;
+        this.right.src = res.rightSound;
+        this.left.src = res.leftSound;
 
-      if(this.deviceType === 1){
-          this.box = 32;
-      }else{
-          this.box = 20;
-      }
+        this.touchCordinates = null;
+        this.deviceType = deviceType;
+        this.score = 0;
+        //this hold ref to snakeGame class
+        //so that updateScore call can be made
+        this.gameRef = gameRef;
 
-       this.setupBoard();
-      
-   }
-  
+        //is game paused
+        this.gamePlaying = true;
+
+        if (this.deviceType === 1) {
+            this.box = 32;
+        } else {
+            this.box = 20;
+        }
+
+        this.setupBoard();
+
+    }
+
 
     /**
      * it will create a board object and will draw the board
      */
-     setupBoard() {
+    setupBoard() {
         this.ctx = this.canvas.getContext("2d");
         this.canvas.width = Math.floor(window.innerWidth / this.box) * this.box - this.box;
         this.canvas.height = Math.floor(window.innerHeight / this.box) * this.box;
@@ -96,10 +96,10 @@ class GameLogic {
 
 
         //create first snake cell with position in middle of the board
-        this.snake=  new SnakeLevel1(this.ctx,this.box, this.MAX_HEIGHT, this.MAX_WIDTH);
+        this.snake = new SnakeLevel1(this.ctx, this.box, this.MAX_HEIGHT, this.MAX_WIDTH);
         //create mouth cell
         this.snake.createMouth();
-       
+
 
         //create the food
         this.food = new FoodLevel1(this.ctx, this.box, this.box,
@@ -143,18 +143,22 @@ class GameLogic {
 
         this.canvas.width = Math.floor(window.innerWidth / this.box) * this.box - this.box;
         this.canvas.height = Math.floor(window.innerHeight / this.box) * this.box;
-        
-       //now draw the board
+
+
+           //draw the snake (each cell)
+           this.snake.draw();
+
+        //now draw the board
         this.board.draw();
         //draw the food
         this.food.draw();
 
-         //update the position
-        
+        //update the position
 
-        //draw the snake (each cell)
-        this.snake.draw();
-      
+
+     //update the position of mouth
+ this.snake.updateMouhtPositon(this.dir);
+
 
 
         if (this.snake.isFoodEated(this.food)) {
@@ -167,35 +171,35 @@ class GameLogic {
                 this.score++;
             }
             this.gameRef.updateScore(this.score)
-    
+
             this.eat.play();
 
             //update the food position
             this.food.updateFoodPosition(this.board.width, this.board.height)
         } else {
-         
+
             this.snake.pop();
         }
 
-      
-       //check if snake is collided with board or not
-    if (this.snake.isCollidedWithBoard()) {
- 
-        this.gameOver();
-    }
-    //check if snake collided with itself or not
-        if (this.snake.isCollidedWithItself()) {
-         
+
+        //check if snake is collided with board or not
+        if (this.snake.isCollidedWithBoard()) {
+
             this.gameOver();
         }
-        this.snake.addSnakeCell(); 
-       
-           
-       
+        //check if snake collided with itself or not
+        if (this.snake.isCollidedWithItself()) {
+
+            this.gameOver();
+        }
+        
+        this.snake.addSnakeCell();
 
 
- //update the position of mouth
- this.snake.updateMouhtPositon(this.dir);
+ 
+
+
+       
 
     }
 
@@ -204,60 +208,60 @@ class GameLogic {
         var key = x.code;
 
 
+       
+
+        if (this.gamePlaying) {
+            if (key === "Escape") {
+                this.gameOver();
+            } else if (key === "ArrowUp" && this.dir !== "down") {
+                this.dir = "up";
+                this.up.play();
+            } else if (key === "ArrowDown" && this.dir !== "up") {
+                this.dir = "down";
+                this.down.play();
+            } else if (key === "ArrowLeft" && this.dir !== "right") {
+                this.dir = "left";
+                this.left.play();
+            } else if (key === "ArrowRight" && this.dir !== "left") {
+                this.dir = "right";
+                this.right.play();
+            }
+        }
+
         if (key === "KeyR") {
 
             this.restart();
         }
 
-        if(key === "Space"){
-            if(this.gamePlaying === true){
-              
+        if (key === "Space") {
+            if (this.gamePlaying === true) {
+
                 this.pauseGame();
-            }else{
-               
+            } else {
+
                 this.resumeGame();
             }
-            
+
         }
 
-if(this.gamePlaying){
-    if (key === "Escape") {
-        this.gameOver();
-    } else if (key === "ArrowUp" && this.dir !== "down") {
-        this.dir = "up";
-        this.up.play();
-    } else if (key === "ArrowDown" && this.dir !== "up") {
-        this.dir = "down";
-        this.down.play();
-    } else if (key === "ArrowLeft" && this.dir !== "right") {
-        this.dir = "left";
-        this.left.play();
-    } else if (key === "ArrowRight" && this.dir !== "left") {
-        this.dir = "right";
-        this.right.play();
-    }
-}
-
-
-       
     }
 
-/**
- * 
- * method to pause the game
- */
- pauseGame(){
-    this.gamePlaying = false;
-    clearInterval(this.game);
-    this.gameRef.updateGameState("paused");
-}
+    /**
+     * 
+     * method to pause the game
+     */
+    pauseGame() {
+        this.gamePlaying = false;
+        clearInterval(this.game);
+        this.gameRef.updateGameState("paused");
+    }
 
-resumeGame(){
-    this.gamePlaying = true;
-    this.gameRef.updateGameState("playing");
-    this.play();
-   
-}
+    resumeGame() {
+        this.gamePlaying = true;
+        this.gameRef.updateGameState("playing");
+        this.play();
+
+    }
 
 
 
@@ -278,51 +282,51 @@ resumeGame(){
         var gestureCode = globalGestureHandler(evt, this.touchCordinates);
 
 
-      
 
-      if(this.gamePlaying){
-        switch(gestureCode){
-            case 1:
-             if(this.dir !== "right"){
-                 this.dir = "left";
-              
-                 this.left.play();
-               
-                
-             }
-                break;
-             case 2:
-                 if(this.dir !== "left"){
-                     this.dir = "right";
-                     
-                     this.right.play();
-                   
-                 }
-                 break;
-             case 3:
-                 if(this.dir !== "up"){
-                     this.dir = "down";
-                    
-                     this.up.play();
-                   
-                 }
-                 break;
-             case 4 :
-                 if(this.dir !== "down"){
-                     this.dir = "up";
-                    
-                       this.down.play();
-                     
-                 }
-                 break;
-             default:
-                 break;
+
+        if (this.gamePlaying) {
+            switch (gestureCode) {
+                case 1:
+                    if (this.dir !== "right") {
+                        this.dir = "left";
+
+                        this.left.play();
+
+
+                    }
+                    break;
+                case 2:
+                    if (this.dir !== "left") {
+                        this.dir = "right";
+
+                        this.right.play();
+
+                    }
+                    break;
+                case 3:
+                    if (this.dir !== "up") {
+                        this.dir = "down";
+
+                        this.up.play();
+
+                    }
+                    break;
+                case 4:
+                    if (this.dir !== "down") {
+                        this.dir = "up";
+
+                        this.down.play();
+
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
-      }
-  
-  
-                                           
-};
+
+
+
+    };
 }
 
 export default GameLogic;

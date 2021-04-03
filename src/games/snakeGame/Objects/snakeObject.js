@@ -4,8 +4,6 @@
  */
 
 
-
-
 /**
  * this is a basic building block of snake 
  * a snake Cell
@@ -15,34 +13,31 @@
  */
 class SnakeCell {
 
-    constructor(ctx, height, width, xPos, yPos, color) {
+    constructor(ctx, height, width, xPos, yPos) {
 
         this.ctx = ctx;
         this.height = height;
         this.width = width;
         this.xPos = xPos;
         this.yPos = yPos;
-        this.color = color;
+       
 
         //mouth x and y positions
-        this.mouthX = null;
-        this.mouthY = null;
+        this.mouthX = 0;
+        this.mouthY = 0;
     }
 
     /**
      * draw method to draw snake cell
      */
-    draw() {
+    draw(color) {
 
-        this.ctx.fillStyle = this.color;
+        this.ctx.fillStyle = color;
         this.ctx.fillRect(this.xPos, this.yPos, this.height, this.width);
 
         this.ctx.strokeStyle = "black";
         this.ctx.strokeRect(this.xPos, this.yPos, this.height, this.width);
     }
-
-
-
 }
 
 /**
@@ -71,7 +66,12 @@ class SnakeLevel1 {
         for (let i = 0; i < this.snakeCellArray.length; i++) {
 
             //draw each cell
-            this.snakeCellArray[i].draw();
+            if(i == 0 ){
+                this.snakeCellArray[i].draw("red");
+            }else{
+                this.snakeCellArray[i].draw("blue");
+            }
+         
         }
     }
 
@@ -84,7 +84,7 @@ class SnakeLevel1 {
         const mouth = new SnakeCell(this.ctx, this.box, this.box,
             Math.floor(this.boardWidth / 2) * this.box,
             Math.floor(this.boardHeight / 2) * this.box,
-            "red"
+            
         );
      this.mouthX = mouth.xPos;
      this.mouthY = mouth.yPos
@@ -99,7 +99,7 @@ class SnakeLevel1 {
        
      
 
-        const newCell = new SnakeCell(this.ctx, this.box,this.box,this.mouthX , this.mouthY,  "green");
+        const newCell = new SnakeCell(this.ctx, this.box,this.box,this.mouthX , this.mouthY);
         this.snakeCellArray.unshift(newCell)
     }
 
@@ -163,10 +163,8 @@ class SnakeLevel1 {
     * 
     */
    isCollidedWithItself(){
-    
- 
-
-    for (let i = 0; i < this.snakeCellArray.length; i++) {
+       
+     for (let i = 0; i < this.snakeCellArray.length; i++) {
         if ((this.snakeCellArray[i].xPos === this.mouthX && this.snakeCellArray[i].yPos === this.mouthY)) {
            return true;
         }
