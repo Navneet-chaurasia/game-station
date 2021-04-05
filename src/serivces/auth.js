@@ -18,7 +18,15 @@ class AuthService{
         return !!firebase.auth().currentUser;
       } 
 
-    
+
+      /**
+       * 
+       * @returns userid
+       */
+    static getUserid(){
+
+      return firebase.auth().currentUser.uid;
+    }
 
       static getUserData(){
   

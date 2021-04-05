@@ -25,7 +25,7 @@ class NavBar extends React.Component{
                   <NavDropdown.Item href="#action/3.2">Setting 2</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Setting 3</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item ><LogoutComponent></LogoutComponent> </NavDropdown.Item>
+                  <LogoutComponent></LogoutComponent> 
                 </NavDropdown>
 
                 <AuthStateUI></AuthStateUI>

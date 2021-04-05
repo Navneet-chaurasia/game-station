@@ -2,8 +2,10 @@
 
 
 import React from 'react';
+import DB from 'serivces/backend/database';
+import UserData from 'serivces/globalData/globalUserData';
 import Home from '../home/home';
-import AuthService from '../serivces/auth';
+
 import './profile.css';
 
 
@@ -14,279 +16,123 @@ class ProfilePage extends React.Component{
 
     render(){
         
-        if(!AuthService.isLoggedIn()){
+       DB.getUserData();
+
+       
+        if(!UserData.isLoggedIn){
             return <Home></Home>
         }else
-    return  <section id="content" className="container">
-     
-          <div className="page-heading">
-              <div className="media clearfix">
-                <div className="media-left pr30">
-                  <a href="facebook.com">
-                    <img alt="frjowefer pofre" className="media-object mw150" src="https://bootdey.com/img/Content/avatar/avatar7.png"  />
-                  </a>
-                </div>                      
-                <div className="media-body va-m">
-                  <h2 className="media-heading">Michael Halls
-                    <small> - Profile</small>
-                  </h2>
-                  <p className="lead">Lorem ipsum dolor sit amet ctetur adicing elit, sed do eiusmod tempor incididunt</p>
-                  <div className="media-links">
-                    <ul className="list-inline list-unstyled">
-                      <li>
-                        <a href="facebook.com" title="facebook link">
-                          <span className="fa fa-facebook-square fs35 text-primary"></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="facebook.com" title="twitter link">
-                          <span className="fa fa-twitter-square fs35 text-info"></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="facebook.com" title="google plus link">
-                          <span className="fa fa-google-plus-square fs35 text-danger"></span>
-                        </a>
-                      </li>
-                      <li className="hidden">
-                        <a href="facebook.com" title="behance link">
-                          <span className="fa fa-behance-square fs35 text-primary"></span>
-                        </a>
-                      </li>
-                      <li className="hidden">
-                        <a href="facebook.com" title="pinterest link">
-                          <span className="fa fa-pinterest-square fs35 text-danger-light"></span>
-                        </a>
-                      </li>
-                      <li className="hidden">
-                        <a href="facebook.com" title="linkedin link">
-                          <span className="fa fa-linkedin-square fs35 text-info"></span>
-                        </a>
-                      </li>
-                      <li className="hidden">
-                        <a href="facebook.com" title="github link">
-                          <span className="fa fa-github-square fs35 text-dark"></span>
-                        </a>
-                      </li>
-                      <li className="">
-                        <a href="facebook.com" title="phone link">
-                          <span className="fa fa-phone-square fs35 text-system"></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="facebook.com" title="email link">
-                          <span className="fa fa-envelope-square fs35 text-muted"></span>
-                        </a>
-                      </li>
-                      <li className="hidden">
-                        <a href="facebook.com" title="external link">
-                          <span className="fa fa-external-link-square fs35 text-muted"></span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-          </div>
+    return  <div className="w3-content w3-margin-top" style={{maxWidth:1400+"px"}}>
+    
+
+      <div className="w3-row-padding">
       
-          <div className="row">
-              <div className="col-md-4">
-                <div className="panel">
-                  <div className="panel-heading">
-                    <span className="panel-icon">
-                      <i className="fa fa-star"></i>
-                    </span>
-                    <span className="panel-title"> User Popularity</span>
-                  </div>
-                  <div className="panel-body pn">
-                    <table className="table mbn tc-icon-1 tc-med-2 tc-bold-last">
-                      <thead>
-                        <tr className="hidden">
-                          <th className="mw30">#</th>
-                          <th>First Name</th>
-                          <th>Revenue</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <span className="fa fa-desktop text-warning"></span>
-                          </td>
-                          <td>Television</td>
-                          <td>
-                            <i className="fa fa-caret-up text-info pr10"></i>$855,913</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <span className="fa fa-microphone text-primary"></span>
-                          </td>
-                          <td>Radio</td>
-                          <td>
-                            <i className="fa fa-caret-down text-danger pr10"></i>$349,712</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <span className="fa fa-newspaper-o text-info"></span>
-                          </td>
-                          <td>Newspaper</td>
-                          <td>
-                            <i className="fa fa-caret-up text-info pr10"></i>$1,259,742</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div className="panel">
-                  <div className="panel-heading">
-                    <span className="panel-icon">
-                      <i className="fa fa-trophy"></i>
-                    </span>
-                    <span className="panel-title"> My Skills</span>
-                  </div>
-                  <div className="panel-body pb5">
-                    <span className="label label-warning mr5 mb10 ib lh15">Default</span>
-                    <span className="label label-primary mr5 mb10 ib lh15">Primary</span>
-                    <span className="label label-info mr5 mb10 ib lh15">Success</span>
-                    <span className="label label-success mr5 mb10 ib lh15">Info</span>
-                    <span className="label label-alert mr5 mb10 ib lh15">Warning</span>
-                    <span className="label label-system mr5 mb10 ib lh15">Danger</span>
-                    <span className="label label-info mr5 mb10 ib lh15">Success</span>
-                    <span className="label label-success mr5 mb10 ib lh15">Ui Design</span>
-                    <span className="label label-primary mr5 mb10 ib lh15">Primary</span>
-      
-                  </div>
-                </div>
-                <div className="panel">
-                  <div className="panel-heading">
-                    <span className="panel-icon">
-                      <i className="fa fa-pencil"></i>
-                    </span>
-                    <span className="panel-title">About Me</span>
-                  </div>
-                  <div className="panel-body pb5">
-      
-                    <h6>Experience</h6>
-      
-                    <h4>Facebook Internship</h4>
-                    <p className="text-muted"> University of Missouri, Columbia
-                      <br /> Student Health Center, June 2010 - 2012
-                    </p>
-      
-                    <hr className="short br-lighter" />
-      
-                    <h6>Education</h6>
-      
-                    <h4>Bachelor of Science, PhD</h4>
-                    <p className="text-muted"> University of Missouri, Columbia
-                      <br /> Student Health Center, June 2010 through Aug 2011
-                    </p>
-      
-                    <hr className="short br-lighter" />
-      
-                    <h6>Accomplishments</h6>
-      
-                    <h4>Successful Business</h4>
-                    <p className="text-muted pb10"> University of Missouri, Columbia
-                      <br /> Student Health Center, June 2010 through Aug 2011
-                    </p>
-      
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-8">
-      
-                <div className="tab-block">
-                  <ul className="nav nav-tabs">
-                    <li className="active">
-                      <a href="#tab1" data-toggle="tab">Activity</a>
-                    </li>
-                    <li>
-                      <a href="#tab1" data-toggle="tab">Social</a>
-                    </li>
-                    <li>
-                      <a href="#tab1" data-toggle="tab">Media</a>
-                    </li>
-                  </ul>
-                  <div className="tab-content p30" >
-                    <div id="tab1" className="tab-pane active">
-                      <div className="media">
-                        <a className="pull-left" href="facebook.com"> <img alt="ee9 fw0 f" className="media-object mn thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar1.png"  /> </a>
-                        <div className="media-body">
-                          <h5 className="media-heading mb20">Simon Rivers Posted
-                            <small> - 3 hours ago</small>
-                          </h5>
-                          <img alt="fowje ofj ow" src="https://bootdey.com/img/Content/avatar/avatar6.png" className="mw140 mr25 mb20" />
-                          <img alt="wqdqjoq ofj" src="https://bootdey.com/img/Content/avatar/avatar8.png" className="mw140 mr25 mb20" /> 
-                          <img alt="dfude0d fdw" src="https://bootdey.com/img/Content/avatar/avatar7.png" className="mw140 mb20" />
-                          <div className="media-links">
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-thumbs-o-up text-primary mr5"></span> Like </span>
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-share text-primary mr5"></span> Share </span>
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-floppy-o text-primary mr5"></span> Save </span>
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-comment text-primary mr5"></span> Comment </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="media mt25">
-                        <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar6.png"  /> </a>
-                        <div className="media-body mb5">
-                          <h5 className="media-heading mbn">Simon Rivers Posted
-                            <small> - 3 hours ago</small>
-                          </h5>
-                          <p> Omg so freaking sweet dude.</p>
-                          <div className="media pb10">
-                            <a className="pull-left" href="facebook.com"> <img alt="this is for fucking" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar1.png"  /> </a>
-                            <div className="media-body mb5">
-                              <h5 className="media-heading mbn">Jessica Wong
-                                <small> - 3 hours ago</small>
-                              </h5>
-                              <p>Omgosh I'm in love</p>
-                            </div>
-                          </div>
-                          <div className="media mtn">
-                            <a className="pull-left" href="facebook.com"> <img alt="wdj9wejdoe jfew" className="media-object mn thumbnail thumbnail-sm rounded mw40" src="https://bootdey.com/img/Content/avatar/avatar2.png"  /> </a>
-                            <div className="media-body mb5">
-                              <h5 className="media-heading mbn">Jessica Wong
-                                <small> - 3 hours ago</small>
-                              </h5>
-                              <p>Omgosh I'm in love</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="media mt25">
-                        <a className="pull-left" href="facebook.com"> <img alt="ej9djw ofwejf" className="media-object thumbnail mw50" src="https://bootdey.com/img/Content/avatar/avatar2.png"  /> </a>
-                        <div className="media-body">
-                          <h5 className="media-heading mb20">Simon Rivers Posted
-                            <small> - 3 hours ago</small>
-                          </h5>
-                          <img alt="jedjowe " src="https://bootdey.com/img/Content/avatar/avatar2.png" className="mw140 mr25 mb20" />
-                          <img alt="0ejjf0we fwe f" src="https://bootdey.com/img/Content/avatar/avatar3.png" className="mw140 mr25 mb20" /> 
-                          <img alt="jewjewopf ofpo" src="https://bootdey.com/img/Content/avatar/avatar4.png" className="mw140 mb20" />
-                          <div className="media-links">
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-thumbs-o-up text-primary mr5"></span> Like </span>
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-share text-primary mr5"></span> Share </span>
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-floppy-o text-primary mr5"></span> Save </span>
-                            <span className="text-light fs12 mr10">
-                              <span className="fa fa-comment text-primary mr5"></span> Comment </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="tab2" className="tab-pane"></div>
-                    <div id="tab3" className="tab-pane"></div>
-                    <div id="tab4" className="tab-pane"></div>
-                  </div>
-                </div>
+       
+        <div className="w3-third">
+        
+          <div className="w3-white w3-text-grey w3-card-4">
+            <div className="w3-display-container">
+              <img src={UserData.profilePic} style={{width:100+"%"}} alt="Avatar" />
+              <div className="w3-display-bottomleft w3-container w3-text-black">
+                <h2>{UserData.username}</h2>
               </div>
             </div>
-        </section>
+            <div className="w3-container">
+              <p><i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
+              <p><i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
+              <p><i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{UserData.email}</p>
+              <p><i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+              <hr />
+    
+              <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+              <p>Adobe Photoshop</p>
+              <div className="w3-light-grey w3-round-xlarge w3-small">
+                <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width:90+"%"}}>90%</div>
+              </div>
+              <p>Photography</p>
+              <div className="w3-light-grey w3-round-xlarge w3-small">
+                <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width:80+"%"}}>
+                  <div className="w3-center w3-text-white">80%</div>
+                </div>
+              </div>
+              <p>Illustrator</p>
+              <div className="w3-light-grey w3-round-xlarge w3-small">
+                <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width:75+"%"}}>75%</div>
+              </div>
+              <p>Media</p>
+              <div className="w3-light-grey w3-round-xlarge w3-small">
+                <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width:50+"%"}}>50%</div>
+              </div>
+              <br />
+    
+              <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+              <p>English</p>
+              <div className="w3-light-grey w3-round-xlarge">
+                <div className="w3-round-xlarge w3-teal" style={{height:24+"px",width:100+"%"}}></div>
+              </div>
+              <p>Spanish</p>
+              <div className="w3-light-grey w3-round-xlarge">
+                <div className="w3-round-xlarge w3-teal" style={{height:24+"px",width:55+"%"}}></div>
+              </div>
+              <p>German</p>
+              <div className="w3-light-grey w3-round-xlarge">
+                <div className="w3-round-xlarge w3-teal" style={{height:24+"px",width:25+"%"}}></div>
+              </div>
+              <br />
+            </div>
+          </div><br/>
+    
+       
+        </div>
+    
+      
+        <div className="w3-twothird">
+        
+          <div className="w3-container w3-card w3-white w3-margin-bottom">
+            <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+            <div className="w3-container">
+              <h5 className="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
+              <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span className="w3-tag w3-teal w3-round">Current</span></h6>
+              <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+              <hr/>
+            </div>
+            <div className="w3-container">
+              <h5 className="w3-opacity"><b>Web Developer / something.com</b></h5>
+              <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+              <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+              <hr/>
+            </div>
+            <div className="w3-container">
+              <h5 className="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+              <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br/>
+            </div>
+          </div>
+    
+          <div className="w3-container w3-card w3-white">
+            <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+            <div className="w3-container">
+              <h5 className="w3-opacity"><b>W3Schools.com</b></h5>
+              <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+              <p>Web Development! All I need to know in one place</p>
+              <hr/>
+            </div>
+            <div className="w3-container">
+              <h5 className="w3-opacity"><b>London Business School</b></h5>
+              <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+              <p>Master Degree</p>
+              <hr/>
+            </div>
+            <div className="w3-container">
+              <h5 className="w3-opacity"><b>School of Coding</b></h5>
+              <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+              <p>Bachelor Degree</p><br/>
+            </div>
+          </div>
+     </div>
+        </div>
+     </div>
+  
     }
 }
 
