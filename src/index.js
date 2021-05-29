@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import NavBar from './components/navbar/navbar';
+// import NavBar from './components/navbar/navbar';
 
 
 import SnakeGame from './games/snakeGame/level1/snakeGamelevel1';

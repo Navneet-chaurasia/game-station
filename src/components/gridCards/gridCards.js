@@ -6,7 +6,7 @@
 import React from 'react';
 import './gridCards.css';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import {GamesArray} from '../../serivces/gamesArray.js';
 class GridCards extends React.Component{
@@ -51,7 +51,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
    const allGames = GamesArray.allGames.map(( game,index)=> 
    <div className="gallery-item" key={index}>
          <div className="content" >
-         <Link to={game.href}> </Link>  <img src={game.coverImage} alt=""/>
+          <img src={game.coverImage} alt=""/>
                
                 </div>
         </div>
