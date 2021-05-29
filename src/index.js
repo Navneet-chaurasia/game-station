@@ -11,7 +11,7 @@ import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 import ProfilePage from './profile/profile';
 import * as serviceWorker from './serviceWorkerRegistration';
 import SnakeGameSettings from 'games/snakeGame/snakeGameSettings/settings';
-
+import NavBarPro from './components/navbarPro/navbarPro.js';
 ReactDOM.render(
 
      
@@ -19,12 +19,12 @@ ReactDOM.render(
 
   <Switch>
   <Route  exact path ="/profile" >
-           <NavBar title="Wonder Games"></NavBar>
+  <NavBarPro/>
          <ProfilePage></ProfilePage>
 
            </Route>
   <Route exact path="/" >
-  <NavBar title="Wonder Games"></NavBar>
+  <NavBarPro/>
     <Home/>
     </Route>
           <Route path="/games/snakeGame/level1" component = {SnakeGame} />
