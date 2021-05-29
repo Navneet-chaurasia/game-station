@@ -7,7 +7,7 @@ class LogoutComponent extends React.Component{
          
 
     render(){
-      return (<Link to='/' onClick={AuthService.signOut} style={{color:"black", marginLeft:23+"px"}}>Logout</Link>)
+      return (<Link to='/' onClick={AuthService.signOut}>Logout</Link>)
     }
 }
 

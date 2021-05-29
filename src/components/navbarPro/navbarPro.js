@@ -3,13 +3,14 @@
  */
 import React from 'react';
 import './navbarPro.css';
-
+import AuthStateUI from '../authStateComponent/authState';
+import LogoutComponent from "../logoutComponent/logoutComponent";
 class NavBarPro extends React.Component{
 
 
     render(){
         return (<><input id="page-nav-toggle" className="main-navigation-toggle" type="checkbox" />
-        <label for="page-nav-toggle">
+        <label htmlFor="page-nav-toggle">
           <svg className="icon--menu-toggle" viewBox="0 0 60 30">
             <g className="icon-group">
               <g className="icon--menu">
@@ -27,10 +28,10 @@ class NavBarPro extends React.Component{
         
         <nav className="main-navigation">
           <ul>
-            <li><a href="#0">Home</a></li>
-            <li><a href="#0">About</a></li>
-            <li><a href="#0">Contact</a></li>
-            <li><a href="#0">Dance</a></li>
+            <li><AuthStateUI></AuthStateUI></li>
+            <li><a href="#0">Settings</a></li>
+            <li><a href="#0">LeaderBpard</a></li>
+            <li><LogoutComponent></LogoutComponent> </li>
           </ul>
         </nav>
        

@@ -53,9 +53,9 @@ class AuthStateUI extends React.Component{
 
     render(){
        if(this.state.isLoggedIn){
-return (<Link to="/profile" style={{marginTop:7+"px"}}> <Avatar id="profilePic" alt="Remy Sharp" src={this.state.userData.photoURL}/> {this.state.userData.displayName}</Link> )
+return (<Link to="/profile" > <Avatar id="profilePic" alt="Remy Sharp" src={this.state.userData.photoURL}/> {this.state.userData.displayName}</Link> )
       } else{
-return( <p style={{marginTop:7+"px"}} onClick={AuthService.signIn}>Login</p>)
+return( <a href="#0"><p style={{color:"white"}} onClick={AuthService.signIn}>Login</p></a>)
       }
       
         

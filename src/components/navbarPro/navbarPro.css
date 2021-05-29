@@ -8,8 +8,8 @@
   --space: 1rem;
   --font-primary: "Helvetica", sans-serif;
   --font-heading: "Merriweather", serif;
-  --font-size: 1.125rem;
-  --line-height: 1.5;
+  --font-size: 17px;
+  --line-height: 1;
 }
 
 * {
@@ -93,7 +93,7 @@ h1 {
   z-index: -1;
 }
 .main-navigation ul {
-  font-size: 12vmin;
+  font-size: 30px;
   font-family: var(--font-heading);
   width: 100%;
 }
