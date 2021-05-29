@@ -6,7 +6,8 @@
   
   .untitled {
       overflow: hidden;
-    position: absolute;
+  position: absolute;
+  margin-bottom: 1000px;
     height: 50%;
     width: 100%;
     -webkit-animation: rotateHue infinite 20s linear;
