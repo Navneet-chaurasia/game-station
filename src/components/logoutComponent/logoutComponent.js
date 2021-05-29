@@ -2,12 +2,12 @@
 
 import AuthService from "../../serivces/auth";
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class LogoutComponent extends React.Component{
          
 
     render(){
-      return (<p onClick={AuthService.signOut}>Logout</p>)
+      return (<Link to='/' onClick={AuthService.signOut}>Logout</Link>)
     }
 }
 

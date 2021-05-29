@@ -1,0 +1,21 @@
+#parContainer{
+    height: 150px;
+    overflow-x: auto;
+    width: 100%;
+    border: 1px solid black;
+  position: relative;
+  display: flex;
+    z-index: 50;
+}
+.rowItem{
+    height: 100%;
+    padding: 50px;
+    width: 50px;
+    border: 1px solid black;
+    
+    display: inline;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
