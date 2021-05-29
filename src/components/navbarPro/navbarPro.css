@@ -53,6 +53,11 @@ h1 {
   width: var(--size);
   height: var(--size);
   stroke-width: 6;
+  background-color: pink;
+  border-radius: 50px;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: #F0F7EE;
 }
 
 .icon-group {

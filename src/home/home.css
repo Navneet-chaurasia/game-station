@@ -1,0 +1,9 @@
+
+#mainHomeDiv{
+    position: absolute;
+    top: 50%;
+   border: 2px solid red;
+   height: auto;
+   width: 100%;
+   
+}

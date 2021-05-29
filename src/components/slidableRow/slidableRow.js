@@ -4,18 +4,19 @@
 
 import React from 'react';
 import './slidableRow.css';
-
+import GameCardType3 from '../gameCardType3/gameCardType3.js';
 class SlidableRow extends React.Component{
     render(){
-return (
-    <div id="parContainer">
-        <div className="rowItem"></div>
-        <div className="rowItem"></div>
-        <div className="rowItem"> </div>
-        <div className="rowItem"></div>
-        <div className="rowItem"></div>
-
-    </div>
+return (<>
+<div id="slidableRow">
+    <GameCardType3/>
+    <GameCardType3/>
+    <GameCardType3/>
+    <GameCardType3/>
+    <GameCardType3/>
+    <GameCardType3/>
+    <GameCardType3/>
+    <GameCardType3/></div></>
 );
     }
 }

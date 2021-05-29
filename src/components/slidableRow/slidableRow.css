@@ -1,21 +1,12 @@
-#parContainer{
-    height: 150px;
-    overflow-x: auto;
+#slidableRow{
+height: 100px;
+    position: absolute;
+    display: flex;
     width: 100%;
-    border: 1px solid black;
-  position: relative;
-  display: flex;
-    z-index: 50;
+    border: 2px solid blue;
+    overflow-x: auto;
+    margin: 10px;
 }
-.rowItem{
-    height: 100%;
-    padding: 50px;
-    width: 50px;
-    border: 1px solid black;
-    
-    display: inline;
-}
-
 ::-webkit-scrollbar{
     display: none;
 }
