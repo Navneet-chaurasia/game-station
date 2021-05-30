@@ -12,6 +12,7 @@ import ProfilePage from './profile/profile';
 import * as serviceWorker from './serviceWorkerRegistration';
 import SnakeGameSettings from 'games/snakeGame/snakeGameSettings/settings';
 import NavBarPro from './components/navbarPro/navbarPro.js';
+import ProfilePagePro from './profilePagePro/profilePage.js';
 ReactDOM.render(
 
      
@@ -20,7 +21,8 @@ ReactDOM.render(
   <Switch>
   <Route  exact path ="/profile" >
   <NavBarPro/>
-         <ProfilePage></ProfilePage>
+         {/* <ProfilePage></ProfilePage> */}
+         <ProfilePagePro />
 
            </Route>
   <Route exact path="/" >
