@@ -1,5 +1,6 @@
 /***
  * this component renders a special type of card
+ * This will render featured and newly launched games card
  */
 import React from 'react';
 import './gameCardType2.css';
@@ -11,8 +12,9 @@ return (
     <div class="wrapper">
 
 	
-
+<h2><strong>Trending</strong></h2>
 	<div class="cards">
+	
 
 		<figure class="card">
 
@@ -89,6 +91,7 @@ return (
 		</figure>
 
 	</div>
+	<h2><strong></strong></h2>
 
 </div>
 );

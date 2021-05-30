@@ -37,6 +37,15 @@ h1 {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
+
+#logo{
+  position: absolute;
+  top:5%;
+  left: 5%;
+  font-size: 30px;
+  color: pink;
+  font-weight: bold;
+}
 .main-navigation-toggle + label {
   position: fixed;
   top: calc(var(--space) * 1.5);

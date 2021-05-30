@@ -14,6 +14,7 @@ h2 strong,
 .news .card,
 .news .article {
   position: relative;
+  z-index: 0;
 }
 .fix {
   position: fixed;
