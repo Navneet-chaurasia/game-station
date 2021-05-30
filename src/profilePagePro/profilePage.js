@@ -4,9 +4,17 @@
 
 import React from 'react';
 import './profilePage.css';
-
+import DB from 'serivces/backend/database';
+import UserData from 'serivces/globalData/globalUserData';
+import Home from '../home/home';
 class ProfilePagePro extends React.Component{
     render(){
+        DB.getUserData();
+
+        if(!UserData.isLoggedIn){
+            return <Home></Home>
+        }else
+   
 return (
     <div className="container" id="profilePage">
   
@@ -14,12 +22,12 @@ return (
     <div className="row">
       <div className="left col-lg-4">
         <div className="photo-left">
-          <img className="photo" src="https://images.pexels.com/photos/1804796/pexels-photo-1804796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+          <img className="photo" src={UserData.profilePic} alt="kxdpwkdpxw"/>
           <div className="active"></div>
         </div>
-        <h4 className="name">Jane Doe</h4>
-        <p className="info">UI/UX Designer</p>
-        <p className="info">jane.doe@gmail.com</p>
+        <h4 className="name">{UserData.username}</h4>
+        <p className="info">{UserData.email}</p>
+        
         <div className="stats row">
           <div className="stat col-xs-4" style={{paddingRight: 50+"px"}}>
             <p className="number-stat">3,619</p>
@@ -52,22 +60,22 @@ return (
         <span className="follow">Follow</span>
         <div className="row gallery">
           <div className="col-md-4">
-             <img src="https://images.pexels.com/photos/1036371/pexels-photo-1036371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+             <img src="https://images.pexels.com/photos/1036371/pexels-photo-1036371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="kxdpwkdpxw"/>
           </div>
           <div className="col-md-4">
-            <img src="https://images.pexels.com/photos/861034/pexels-photo-861034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+            <img src="https://images.pexels.com/photos/861034/pexels-photo-861034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="kxdpwkdpxw"/>
           </div>
           <div className="col-md-4">
-             <img src="https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+             <img src="https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="kxdpwkdpxw" />
           </div>
           <div className="col-md-4">
-             <img src="https://images.pexels.com/photos/5049/forest-trees-fog-foggy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+             <img src="https://images.pexels.com/photos/5049/forest-trees-fog-foggy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"alt="kxdpwkdpxw" />
           </div>
           <div className="col-md-4">
-            <img src="https://images.pexels.com/photos/428431/pexels-photo-428431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+            <img src="https://images.pexels.com/photos/428431/pexels-photo-428431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"alt="kxdpwkdpxw" />
           </div>
           <div className="col-md-4">
-            <img src="https://images.pexels.com/photos/50859/pexels-photo-50859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+            <img src="https://images.pexels.com/photos/50859/pexels-photo-50859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="kxdpwkdpxw"/>
           </div>
         </div>
       </div>

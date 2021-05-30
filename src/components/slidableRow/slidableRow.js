@@ -7,9 +7,7 @@ import './slidableRow.css';
 import GameCardType3 from '../gameCardType3/gameCardType3.js';
 class SlidableRow extends React.Component{
 
-    constructor(props){
-        super(props);
-    }
+    
     render(){
 return (<>
 <div class="container-fluid" id="slidableRow">
