@@ -33,9 +33,11 @@ class Home extends React.Component{
         {/* <GridCards/> */}
         <div id="mainHomeDiv">
 <GameCardType2/>
-{/* <GameCardType3/> */}
-{/* <SlidableRow/> */}
-<GameListView/>
+
+<SlidableRow rowTitle="3D games"/>
+<SlidableRow rowTitle="Action Game"/>
+<SlidableRow rowTitle="90s Games"/>
+<GameListView rowTitle="Fucking games"/>
 </div>
         </>
         );
