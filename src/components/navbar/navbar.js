@@ -4,6 +4,9 @@ import AuthStateUI from '../authStateComponent/authState';
 import LogoutComponent from "../logoutComponent/logoutComponent";
 
 //home Navbar
+/**
+ * No longer in use Deprecated
+ */
 
 class NavBar extends React.Component{
  

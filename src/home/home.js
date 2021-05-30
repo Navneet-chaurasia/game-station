@@ -8,6 +8,7 @@ import SlideShow from '../components/slideshow/slideshow.js';
 import GameCardType2 from '../components/gameCardsType2/gameCardType2.js';
 
 import SlidableRow from '../components/slidableRow/slidableRow.js';
+import GameListView from '../components/GameListView/gameListView.js';
 //home components (renders home page)
 import './home.css'
 class Home extends React.Component{
@@ -32,8 +33,11 @@ class Home extends React.Component{
         {/* <GridCards/> */}
         <div id="mainHomeDiv">
 <GameCardType2/>
-{/* <GameCardType3/> */}
-<SlidableRow/>
+
+<SlidableRow rowTitle="3D games"/>
+<SlidableRow rowTitle="Action Game"/>
+<SlidableRow rowTitle="90s Games"/>
+<GameListView rowTitle="Fucking games"/>
 </div>
         </>
         );
