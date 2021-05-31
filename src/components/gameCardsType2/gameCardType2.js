@@ -20,15 +20,15 @@ return (
 
 			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/1.jpg" alt="sjwjspwjps"/>
 
-			<figcaption><Link to="/games/snakeGame/level1"> Dota 2</Link></figcaption>
+			<figcaption><Link to="/games/snakeGame/level1"> Snake Game</Link></figcaption>
 
 		</figure>
 
 		<figure class="card">
-
+		
 			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/2.jpg" alt="sjwjspwjps"/>
 
-			<figcaption>Stick Fight</figcaption>
+			<figcaption><Link to="/games/coronaGoGame"> Corona Go Game</Link></figcaption>
 
 		</figure>
 
