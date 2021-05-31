@@ -10,9 +10,10 @@ import SnakeGame from './games/snakeGame/level1/snakeGamelevel1';
 import {  BrowserRouter , Route,  Switch } from 'react-router-dom';
 // import ProfilePage from './profile/profile';
 import * as serviceWorker from './serviceWorkerRegistration';
-import SnakeGameSettings from 'games/snakeGame/snakeGameSettings/settings';
+
 import NavBarPro from './components/navbarPro/navbarPro.js';
 import ProfilePagePro from './profilePagePro/profilePage.js';
+import CoronaGoGame from 'games/coronaGoGame/coronaGo/coronaGo.js';
 ReactDOM.render(
 
      
@@ -29,9 +30,10 @@ ReactDOM.render(
   <NavBarPro/>
     <Home/>
     </Route>
+    <Route path="/games/coronaGoGame" component = {CoronaGoGame} />
           <Route path="/games/snakeGame/level1" component = {SnakeGame} />
            
-          <Route path="/games/snakeGame/settings" component = {SnakeGameSettings} />
+      
        <Route path="*">
          <Home></Home>
        </Route>

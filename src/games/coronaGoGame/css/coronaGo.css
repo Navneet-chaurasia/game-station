@@ -1,0 +1,178 @@
+
+
+#coronaGoGame{
+   
+   background-color: white;
+   color:black;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   background-size:contain;
+}
+
+#coronaGoGame .navButtons{
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+#coronaGoGame .box{
+    position: relative;
+    top:30%;
+    margin: auto;
+    width: 30%;
+    height: 200px;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#coronaGoGame #coronaGoCanvas{
+    position: relative;
+}
+#coronaGoGame  p{
+    color:pink;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+#coronaGoGame .start_button{
+
+    padding: 1rem;
+    background: rgb(46, 174, 224);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bolder;
+
+}
+
+#coronaGoGame .box_title{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#progressBar{
+    width: 20vw;
+    position: fixed;
+    top:20px;
+    right:2vw;
+    z-index: 1000;
+}
+.meter {
+    box-sizing: content-box;
+    height: 20px; /* Can be anything */
+    z-index: 1000;
+   
+    background: grey;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  }
+  .meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43, 194, 83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(43, 194, 83) 37%,
+      rgb(84, 240, 84) 69%
+    );
+    box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .meter > span:after,
+  .animate > span > span {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent
+    );
+    z-index: 1;
+    background-size: 50px 50px;
+    animation: move 2s linear infinite;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .animate > span:after {
+    display: none;
+  }
+  
+  @keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+
+
+@media (max-width:600px) {
+    #coronaGoGame .navButtons{
+        font-size: 14px;
+        font-weight: bolder;
+    }
+
+    #coronaGoGame .box{
+        position: relative;
+        top:40%;
+        margin: auto;
+        width: 80%;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    }
+    #progressBar{
+        left: 10px;
+        top:8%;
+        width: 40%;
+       
+    }
+    .meter{
+        height: 10px;
+        padding: 4px;
+    }
+}
+@media screen and (max-width:1024px) and (orientation:landscape) {
+   
+    #coronaGoGame .box{
+        position: relative;
+      
+        margin: auto;
+        width:50%;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    }
+
+    #progressBar{
+        
+        width: 20%;
+       
+    }
+    .meter{
+        height: 10px;
+        padding: 7px;
+    }
+   }

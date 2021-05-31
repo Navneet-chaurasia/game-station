@@ -5,6 +5,7 @@
 import React from 'react';
 import './gameCardType2.css';
 import { Link } from 'react-router-dom';
+import { setDeviceOrientation } from 'serivces/getDeviceType';
 class GameCardType2 extends React.Component{
 
     render(){
@@ -20,15 +21,15 @@ return (
 
 			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/1.jpg" alt="sjwjspwjps"/>
 
-			<figcaption><Link to="/games/snakeGame/level1"> Dota 2</Link></figcaption>
+			<figcaption><Link to="/games/snakeGame/level1"> Snake Game</Link></figcaption>
 
 		</figure>
 
 		<figure class="card">
-
+		
 			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/2.jpg" alt="sjwjspwjps"/>
-
-			<figcaption>Stick Fight</figcaption>
+            
+			<figcaption><Link to="/games/coronaGoGame" onClick={() => {setDeviceOrientation()}}> Corona Go Game</Link></figcaption>
 
 		</figure>
 
