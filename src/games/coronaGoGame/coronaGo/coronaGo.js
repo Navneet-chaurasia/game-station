@@ -5,7 +5,7 @@
 
 import React from 'react';
 import '../css/coronaGo.css';
-import $ from 'jquery';
+
 import { Navbar, Nav, } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
 import { BulletsArray, Corona, Space } from './objects.js';
