@@ -94,6 +94,7 @@ class CoronaGoGame extends React.Component {
             document.querySelector("#coronaGoGame").webkitRequestFullScreen().catch((e) => {console.log(e)});
 
             window.screen.orientation.lock("landscape").catch((e)=>{console.log(e)})
+            this.init();
         }
        
     }
