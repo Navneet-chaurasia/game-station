@@ -9,7 +9,7 @@ import '../css/coronaGo.css';
 import { Navbar, Nav, } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
 import { BulletsArray, Corona, Space } from './objects.js';
-import { getDeviceType } from '../../../serivces/getDeviceType.js';
+
 class CoronaGoGame extends React.Component {
 
 
@@ -43,11 +43,9 @@ class CoronaGoGame extends React.Component {
 
         let startButton = document.querySelector(".start_button");
        
-
-        startButton.addEventListener("click", (ev) => {
+            startButton.addEventListener("click", (ev) => {
             ev.stopImmediatePropagation();
-            //create a canvas element
-            this.setDeviceOrientation();
+           
 
             let canvas = document.createElement("canvas");
             canvas.id = "coronaGoCanvas";
@@ -78,26 +76,6 @@ class CoronaGoGame extends React.Component {
         })
     }
 
-
-    /**
-     * this method lock the device orientation in landscape mode if 
-     * game is opened in mobile devices
-     */
-    setDeviceOrientation(){
-        if(getDeviceType() === "desktop"){
-           
-        }else{
-
-            if(document.querySelector("#coronaGoGame").requestFullscreen)
-            document.querySelector("#coronaGoGame").requestFullscreen().catch((e) => {console.log(e)});
-        else if(document.querySelector("#coronaGoGame").webkitRequestFullScreen)
-            document.querySelector("#coronaGoGame").webkitRequestFullScreen().catch((e) => {console.log(e)});
-
-            window.screen.orientation.lock("landscape").catch((e)=>{console.log(e)})
-            this.init();
-        }
-       
-    }
 
     /**
      * it will pause resume accordingly
@@ -224,7 +202,7 @@ class CoronaGoGame extends React.Component {
                     <Button  size="small"    onClick={() => {this.toggleGameState()}}><p className="navButtons">{
                     this.state.gameState === 1 ? "Pause" : this.state.gameState === 0 ? "Play" : "GameOver : Restart"}</p></Button>
 
-                     <Button   size="small" ><p className="navButtons">Setttings</p>
+                     <Button   size="small" ><p className="navButtons" id="fullScreen">Setttings</p>
                   </Button>
 
                 </Nav>
