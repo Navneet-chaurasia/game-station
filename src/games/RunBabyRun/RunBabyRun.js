@@ -1,3 +1,5 @@
+/** eslint-disable */
+
 import React from 'react';
 import './runbabyrun.css';
 import { setDeviceOrientation } from 'serivces/getDeviceType';
@@ -68,6 +70,7 @@ Follow me on twitter for more: https://twitter.com/HunorBorbely
 */
 
 // Extend the base functionality of JavaScript
+// eslint-disable-next-line no-extend-native
 Array.prototype.last = function () {
     return this[this.length - 1];
   };
@@ -144,11 +147,6 @@ Array.prototype.last = function () {
     sceneOffset = 0;
     
 
-    function d() {
-        this.setStete({
-            score:0
-        })
-    }
      
     curScore=0;
     introductionElement.style.opacity = 1;
@@ -381,7 +379,7 @@ Array.prototype.last = function () {
   
   // Returns the platform the stick hit (if it didn't hit any stick then return undefined)
   function thePlatformTheStickHits() {
-    if (sticks.last().rotation != 90)
+    if (sticks.last().rotation !== 90)
       throw Error(`Stick is ${sticks.last().rotation}°`);
     const stickFarX = sticks.last().x + sticks.last().length;
   
@@ -428,7 +426,7 @@ Array.prototype.last = function () {
     curScore=0;
 
 
-    score.innerText="score :" +"  "+ curScore;
+    score.innerText="score : " + curScore;
   
     event.preventDefault();
     resetGame();
