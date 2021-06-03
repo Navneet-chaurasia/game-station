@@ -16,7 +16,7 @@ class ProfilePagePro extends React.Component{
         }else
    
 return (
-    <div className="container" id="profilePage">
+    <div className="contain" id="profilePage">
   
   <main>
     <div className="row">

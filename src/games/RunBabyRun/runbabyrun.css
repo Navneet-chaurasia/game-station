@@ -1,0 +1,158 @@
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+z-index: -50;
+ 
+  
+}
+
+
+#score{
+  position: absolute;
+   z-index: 10;
+  font-size: 2em;
+  font-weight: 900;
+
+  top: 50px;
+}
+
+#introduction {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  font-weight: 600;
+  font-size: 0.8em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: opacity 2s;
+}
+
+#restart {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border-radius: 50%;
+  color: white;
+  background-color: red;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: none;
+  cursor: pointer;
+}
+
+#perfect {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***  landing page csss**/
+
+
+
+
+
+#runbabyrunintro figure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 375px;
+  left: 50%;
+  top:25px;
+  transform: translate(-50%);
+  height: 95vh;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+#runbabyrunintro figure:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+#runbabyrunintro figure:hover img {
+  transform: scale(1.25);
+}
+#runbabyrunintro figure:hover figcaption {
+  bottom: 0;
+}
+#runbabyrunintro figure h1 {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 1;
+}
+#runbabyrunintro figure img {
+  height: 100%;
+  transition: 0.25s;
+  width: 100%;
+
+}
+#runbabyrunintro figure figcaption {
+  position: absolute;
+  bottom: -36%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  color: white;
+  line-height: 1;
+  transition: 0.25s;
+}
+#runbabyrunintro figure figcaption h3 {
+  margin: 0 0 20px;
+  padding: 0;
+}
+#runbabyrunintro figure figcaption p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+#runbabyrunintro figure figcaption button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0;
+  padding: 10px 30px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
