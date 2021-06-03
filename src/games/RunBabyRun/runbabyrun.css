@@ -81,7 +81,7 @@ z-index: -50;
 
 
 
-figure {
+#runbabyrunintro figure {
   position: relative;
   display: flex;
   align-items: center;
@@ -96,16 +96,16 @@ figure {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
 }
-figure:hover {
+#runbabyrunintro figure:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-figure:hover img {
+#runbabyrunintro figure:hover img {
   transform: scale(1.25);
 }
-figure:hover figcaption {
+#runbabyrunintro figure:hover figcaption {
   bottom: 0;
 }
-figure h1 {
+#runbabyrunintro figure h1 {
   position: absolute;
   top: 50px;
   left: 20px;
@@ -116,13 +116,13 @@ figure h1 {
   font-weight: 100;
   line-height: 1;
 }
-figure img {
+#runbabyrunintro figure img {
   height: 100%;
   transition: 0.25s;
   width: 100%;
 
 }
-figure figcaption {
+#runbabyrunintro figure figcaption {
   position: absolute;
   bottom: -36%;
   left: 0;
@@ -135,15 +135,15 @@ figure figcaption {
   line-height: 1;
   transition: 0.25s;
 }
-figure figcaption h3 {
+#runbabyrunintro figure figcaption h3 {
   margin: 0 0 20px;
   padding: 0;
 }
-figure figcaption p {
+#runbabyrunintro figure figcaption p {
   font-size: 14px;
   line-height: 1.75;
 }
-figure figcaption button {
+#runbabyrunintro figure figcaption button {
   position: relative;
   display: flex;
   align-items: center;
