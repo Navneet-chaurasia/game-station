@@ -1,5 +1,6 @@
 import React from 'react';
 import './runbabyrun.css';
+import { setDeviceOrientation } from 'serivces/getDeviceType';
 
 class  RunBabyRun extends React.Component{
 
@@ -17,13 +18,14 @@ componentDidMount(){
 
 let introPage = document.getElementById("introPage");
 introPage.addEventListener('click', (e)=>{
+  setDeviceOrientation();
         e.stopImmediatePropagation();
         document.getElementById("di").style.display="none";
 
       const con= document.getElementById("cone");
 
       con.style.display="flex";
-
+      
         
 
         this.inView = true;
@@ -33,6 +35,16 @@ introPage.addEventListener('click', (e)=>{
 
       console.log(this.inView)
       window.addEventListener("mousedown", function (event) {
+        if (phase === "waiting") {
+          lastTimestamp = undefined;
+          introductionElement.style.opacity = 0;
+          phase = "stretching";
+          
+          window.requestAnimationFrame(animate);
+        }
+      });
+
+      window.addEventListener("touchstart", function (event) {
         if (phase === "waiting") {
           lastTimestamp = undefined;
           introductionElement.style.opacity = 0;
@@ -241,7 +253,14 @@ Array.prototype.last = function () {
 
     
   window.addEventListener("mouseup", function (event) {
-    if (phase == "stretching") {
+    if (phase === "stretching") {
+      phase = "turning";
+    }
+  });
+
+  //for touch screen
+  window.addEventListener("touchend", function (event) {
+    if (phase === "stretching") {
       phase = "turning";
     }
   });
@@ -637,14 +656,45 @@ return(<>
 
 
 
-<div  id="di" style={{position:"absolute" ,height:100+"vh",width:100+"vw",backgroundColor:"cyan",zIndex:10}}>
 
 
 
-  <h1 id="introPage"  >lets start the game</h1>
 
 
-</div>
+
+
+
+
+
+
+<figure  id="di" class="image-block">
+	<h1>RunBabyRun</h1>
+	<img src="https://content.instructables.com/ORIG/F4D/BSZJ/I8BGHWE5/F4DBSZJI8BGHWE5.jpg?auto=webp&frame=1&width=320&md=0197b2669147910ac253f81f5925cbf6" alt="" />
+	<figcaption>
+		<h3>
+			Do you want to play
+		</h3>
+		<p>
+    
+    this story starts when  baby ask from parents for some money but they say that they can'nt give money to them 
+
+    so baby stole the money from parents but certanily his parents know about this and they run for catch the baby 
+
+    and now baby is runing for saving his life
+    
+    
+    
+    </p>
+		<button  id="introPage">
+		start Game
+		</button>
+	</figcaption>
+</figure>
+
+
+
+
+
 
 
 <div className="container"   id="cone" >
