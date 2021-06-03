@@ -5,7 +5,7 @@
 
 import React from 'react';
 import '../css/coronaGo.css';
-
+import { setDeviceOrientation } from 'serivces/getDeviceType';
 import { Navbar, Nav, } from 'react-bootstrap';
 import { Button } from '@material-ui/core';
 import { BulletsArray, Corona, Space } from './objects.js';
@@ -32,48 +32,52 @@ class CoronaGoGame extends React.Component {
              *            0 => paused
              *            -1=> gameOver
              */
-            gameState : 1
+            gameState: 1
         }
 
     }
     //init method it will do some starting procedures
     init() {
+
+        this.setState({
+            score: 0,
+            gameState: 0
+        })
+
+
+        let canvas = document.createElement("canvas");
+        canvas.id = "coronaGoCanvas";
+
+        let coronaGoGame = document.getElementById("coronaGoGame");
+        let startUpBox = document.getElementById("startBox");
+
         
-       
 
-        let startButton = document.querySelector(".start_button");
-       
-            startButton.addEventListener("click", (ev) => {
-            ev.stopImmediatePropagation();
-           
-
-            let canvas = document.createElement("canvas");
-            canvas.id = "coronaGoCanvas";
-
-            let coronaGoGame = document.getElementById("coronaGoGame");
-            let startUpBox = document.getElementById("startBox");
-            coronaGoGame.replaceChild(canvas, startUpBox);
-            //setup the canvas
-            this.canvas = canvas;
-            this.ctx = canvas.getContext("2d")
-            this.canvas.height = window.innerHeight;
-            this.canvas.width = window.innerWidth;
-
-            this.bulletArray = new BulletsArray(this.ctx, 4, 4, this.canvas.height, this.canvas.width);
-            this.space = new Space(this.ctx, this.canvas.height, this.canvas.width);
-            this.earth = this.space.earth;
-            this.createCorona();
-
-            //start the game
-            this.startGame();
+        this.canvas = canvas;
+        this.ctx = canvas.getContext("2d")
+        this.canvas.height = window.innerHeight;
+        this.canvas.width = window.innerWidth;
+        this.bulletArray = new BulletsArray(this.ctx, 4, 4, this.canvas.height, this.canvas.width);
+        this.space = new Space(this.ctx, this.canvas.height, this.canvas.width);
+        this.earth = this.space.earth;
+ 
+        window.addEventListener("click", (e) => {
             let bulletOriginX = this.canvas.width / 2;
             let bulletOriginY = this.canvas.height / 2;
-            window.addEventListener("click", (e) => {
-                let speed = this.calculateSpeed(e.clientX, e.clientY, bulletOriginX, bulletOriginY)
-                this.bulletArray.addBullet(bulletOriginX, bulletOriginY, speed)
+            let speed = this.calculateSpeed(e.clientX, e.clientY, bulletOriginX, bulletOriginY)
+            this.bulletArray.addBullet(bulletOriginX, bulletOriginY, speed)
 
-            })
         })
+   
+        //setup the canvas
+           if(startUpBox != null)
+        coronaGoGame.replaceChild(canvas, startUpBox);
+           
+        this.createCorona();
+
+        //start the game
+        this.startGame();
+
     }
 
 
@@ -81,21 +85,21 @@ class CoronaGoGame extends React.Component {
      * it will pause resume accordingly
      */
     toggleGameState() {
-      if(this.state.gameState === -1){
-          this.restartGame()
-        return;
-      }else if(this.state.gameState === 0){
-         
-        this.setState({
-            gameState : 1
-        })
-        this.startGame();
-      }else{
-        this.setState({
-            gameState : 0
-        })
-        clearInterval(this.timeout)
-      }
+        if (this.state.gameState === -1) {
+            this.restartGame()
+            return;
+        } else if (this.state.gameState === 0) {
+
+            this.setState({
+                gameState: 1
+            })
+            this.startGame();
+        } else {
+            this.setState({
+                gameState: 0
+            })
+            clearInterval(this.timeout)
+        }
     }
 
     restartGame() {
@@ -136,7 +140,7 @@ class CoronaGoGame extends React.Component {
                 if (this.state.life === 0) {
                     clearInterval(this.timeout)
                     this.setState({
-                        gameState : -1
+                        gameState: -1
                     })
                 }
 
@@ -183,10 +187,42 @@ class CoronaGoGame extends React.Component {
         }, 1000)
     }
 
+    /**
+     * this method will be called to update the position of all objects if window is resized
+     */
+    updateObjectDimensions(){
+     //1. update canvas
+     this.canvas.height = window.innerHeight;
+     this.canvas.width = window.innerWidth;
+
+     //2. bullet array
+     this.bulletArray.canvasHeight = this.canvas.height
+     this.bulletArray.canvasWidth = this.canvas.width
+
+     //3. space
+     this.space.height = this.canvas.height
+     this.space.width = this.canvas.width;
+
+     //4. earth
+     this.earth.x = this.canvas.width/2-this.earth.width
+     this.earth.y = this.canvas.height/2-this.earth.height
+    
+    }
+
 
     componentDidMount() {
+        let startButton = document.querySelector(".start_button");
+        
+        startButton.addEventListener("click", (ev) => {
+            ev.stopImmediatePropagation();
+            setDeviceOrientation();
+            this.init();
+           })
 
-        this.init();
+        
+        window.addEventListener("resize", ()=>{
+            this.updateObjectDimensions();
+        });
 
     }
 
@@ -196,14 +232,14 @@ class CoronaGoGame extends React.Component {
 
             <Navbar bg="transparent" fixed="top" >
                 <Nav className="mr-auto">
-                <Button   size="small"  ><p className="navButtons">Score : 
+                    <Button size="small"  ><p className="navButtons">Score :
                     {this.state.score}</p></Button>
 
-                    <Button  size="small"    onClick={() => {this.toggleGameState()}}><p className="navButtons">{
-                    this.state.gameState === 1 ? "Pause" : this.state.gameState === 0 ? "Play" : "GameOver : Restart"}</p></Button>
+                    <Button size="small" onClick={() => { this.toggleGameState() }}><p className="navButtons">{
+                        this.state.gameState === 1 ? "Pause" : this.state.gameState === 0 ? "Play" : "GameOver : Restart"}</p></Button>
 
-                     <Button   size="small" ><p className="navButtons" id="fullScreen">Setttings</p>
-                  </Button>
+                    <Button size="small" ><p className="navButtons" id="fullScreen">Setttings</p>
+                    </Button>
 
                 </Nav>
             </Navbar>
