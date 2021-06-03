@@ -1,7 +1,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
+
 }
 
 .container {
@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
 z-index: -50;
- 
+cursor: pointer;
   
 }
 
