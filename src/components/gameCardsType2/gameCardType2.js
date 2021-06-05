@@ -45,7 +45,7 @@ return (
 
 			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" alt="sjwjspwjps"/>
 
-			<figcaption>KoseBoz!</figcaption>
+			<figcaption><Link to='/games/FloppyBirdGame'> Floppy Bird</Link></figcaption>
 
 		</figure>
 
