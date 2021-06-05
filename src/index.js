@@ -15,6 +15,7 @@ import NavBarPro from './components/navbarPro/navbarPro.js';
 import ProfilePagePro from './profilePagePro/profilePage.js';
 import CoronaGoGame from 'games/coronaGoGame/coronaGo/coronaGo.js';
 import RunBabyRun from './games/RunBabyRun/RunBabyRun.js';
+import Floppy from '../src/games/floppyBirdGame/floppy.js';
 ReactDOM.render(
 
      
@@ -33,7 +34,8 @@ ReactDOM.render(
     </Route>
     <Route path="/games/coronaGoGame" component = {CoronaGoGame} />
           <Route path="/games/snakeGame/level1" component = {SnakeGame} />
-          <Route  path='/games/RunBabyRun_lelo_fun'   component={RunBabyRun} />        
+          <Route  path='/games/RunBabyRun_lelo_fun'   component={RunBabyRun} />     
+          <Route  path='/games/FloppyBirdGame'   component={Floppy} />         
       
        <Route path="*">
          <Home></Home>
